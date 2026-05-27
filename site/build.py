@@ -161,7 +161,9 @@ def main():
     }
 
     OUT.write_text(
-        json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps(output, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",  # 固定用 LF，避免在 Windows 產生 CRLF 造成整檔 diff
     )
     print(f"Wrote {OUT.relative_to(ROOT)}")
     print(f"  student: {output['counts']['student']} cards")
