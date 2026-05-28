@@ -289,12 +289,18 @@
     }
 
     if (hasQuery) {
-      // 代碼型 query（如 "J.8"、"A.13"、"j8"）走精確比對；Fuse 對短代碼模糊比對會把
-      // 每個 J 跟每個 8 拆開命中，雜訊太多
-      const codeMatch = state.query.toUpperCase().match(/^([A-Z])\.?(\d+)$/);
+      // 代碼型 query：精確比對，避開 Fuse 對短代碼把 J 跟 .8 拆開命中的雜訊
+      //   "J.8" / "j8" / "j.8"  → 該卡片
+      //   "J"   / "j."          → 整個 J 大項
+      const upper = state.query.toUpperCase();
+      const codeMatch = upper.match(/^([A-Z])\.?(\d+)$/);
+      const categoryMatch = upper.match(/^([A-Z])\.?$/);
       if (codeMatch) {
         const code = `${codeMatch[1]}.${codeMatch[2]}`;
         cards = cards.filter((c) => c.code === code);
+      } else if (categoryMatch) {
+        const cat = categoryMatch[1];
+        cards = cards.filter((c) => c.category === cat);
       } else {
         const ids = new Set(cards.map((c) => c.id));
         const fuseResults = state.fuse.search(state.query).filter((r) => ids.has(r.item.id));
