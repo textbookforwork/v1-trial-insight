@@ -145,7 +145,10 @@ def _inline(
         parts.append(f"<strong>{_escape_html(bm.group(1))}</strong>")
         cursor = bm.end()
     parts.append(_emit_text_with_refs(s[cursor:], default_perspective, force_perspective))
-    return "".join(parts)
+    result = "".join(parts)
+    # 允許在 markdown source 中以 <br> 強制換行（表格 cell 內想分行時用）
+    # 上面的 _escape_html 會把 < > 跳脫成 &lt;br&gt;，這裡還原回來
+    return re.sub(r"&lt;br\s*/?&gt;", "<br>", result)
 
 
 def md_to_html(md: str) -> str:
