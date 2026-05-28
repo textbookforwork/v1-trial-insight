@@ -43,14 +43,22 @@
   <main id="main">
     <section id="empty-state" class="empty-state">
       <h2 class="empty-title">V1 入校試用紀錄</h2>
-      <div class="empty-hint-row">
-        <span class="hint-label">試試</span>
-        <button class="hint" data-q="翻頁">翻頁</button>
-        <button class="hint" data-q="小細胞">小細胞</button>
-        <button class="hint" data-q="家長">家長</button>
-        <button class="hint" data-q="自編">自編</button>
-        <button class="hint" data-q="星際巡航">星際巡航</button>
-        <button class="hint" data-q="網路">網路</button>
+      <div class="empty-hints-stack">
+        <div class="empty-hint-row">
+          <button class="hint" data-q="翻頁">翻頁</button>
+          <button class="hint" data-q="小細胞">小細胞</button>
+          <button class="hint" data-q="家長">家長</button>
+          <button class="hint" data-q="自編">自編</button>
+          <button class="hint" data-q="星際巡航">星際巡航</button>
+          <button class="hint" data-q="網路">網路</button>
+        </div>
+        <div class="empty-hint-row empty-hint-row--prio">
+          <button class="hint hint-prio" data-q="P0" title="阻斷課堂">P0</button>
+          <button class="hint hint-prio" data-q="P1" title="嚴重損害體驗">P1</button>
+          <button class="hint hint-prio" data-q="P2" title="效率損失可繞過">P2</button>
+          <button class="hint hint-prio" data-q="P3" title="優化建議">P3</button>
+          <button class="hint hint-prio" data-q="P4" title="願景">P4</button>
+        </div>
       </div>
     </section>
 

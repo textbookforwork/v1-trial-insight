@@ -273,6 +273,17 @@ a { color: inherit; }
   box-shadow: var(--shadow-1);
 }
 
+.empty-hints-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hint-prio {
+  font-variant-numeric: tabular-nums;
+}
+
 /* Results */
 .results-summary,
 .overview-summary {
@@ -394,6 +405,11 @@ a { color: inherit; }
 
 .badge-student { background: var(--student-soft); color: var(--student); }
 .badge-teacher { background: var(--teacher-soft); color: var(--teacher); }
+.badge-prio {
+  background: var(--warn-soft);
+  color: var(--warn);
+  font-variant-numeric: tabular-nums;
+}
 
 .card-code {
   font-size: 12px;

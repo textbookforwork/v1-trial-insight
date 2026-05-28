@@ -628,7 +628,8 @@
       h('div', { class: 'panel-meta' },
         h('span', { class: `badge badge-${c.perspective}` }, PERSPECTIVE_LABEL[c.perspective]),
         h('span', { class: 'card-code' }, c.code),
-        h('span', { class: 'card-cat' }, c.categoryName)
+        h('span', { class: 'card-cat' }, c.categoryName),
+        c.prio && h('span', { class: 'badge badge-prio', title: PRIO_LABEL[c.prio] || '' }, c.prio)
       )
     );
     sections.push(h('h2', { class: 'panel-title' }, c.title));
