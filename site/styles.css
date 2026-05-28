@@ -879,8 +879,6 @@ mark {
   outline: none;
 }
 
-.persona[data-persp="student"] .persona-label { color: var(--student); }
-.persona[data-persp="teacher"] .persona-label { color: var(--teacher); }
 
 .persona[data-state="b"] .persona-label { cursor: pointer; }
 
