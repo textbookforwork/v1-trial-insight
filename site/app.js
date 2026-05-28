@@ -16,6 +16,7 @@
     overview: document.getElementById('category-overview'),
     overviewSummary: document.getElementById('overview-summary'),
     overviewList: document.getElementById('overview-list'),
+    insights: document.getElementById('insights'),
     panel: document.getElementById('panel'),
     panelBody: document.getElementById('panel-body'),
     panelBack: document.getElementById('panel-back'),
@@ -118,7 +119,7 @@
   function renderCategoryChips() {
     clear(els.categoryChips);
     const persp = state.perspective;
-    if (persp === 'all') {
+    if (persp === 'all' || persp === 'insights') {
       els.categoryChips.hidden = true;
       return;
     }
@@ -205,6 +206,16 @@
       openCard(card.dataset.cardId, { resetStack: true });
     });
 
+    els.insights.addEventListener('click', (e) => {
+      const tag = e.target.closest('.ref-tag');
+      if (!tag) return;
+      e.preventDefault();
+      const id = `${tag.dataset.perspective}-${tag.dataset.code}`;
+      if (state.cardsById.has(id)) {
+        openCard(id, { resetStack: true });
+      }
+    });
+
     for (const hint of document.querySelectorAll('.hint')) {
       hint.addEventListener('click', () => {
         els.search.value = hint.dataset.q;
@@ -242,6 +253,20 @@
     const hasQuery = !!state.query;
     const hasPerspective = state.perspective !== 'all';
     const hasCategory = !!state.category;
+
+    if (state.perspective === 'insights') {
+      if (hasQuery) {
+        // 搜尋時自動跳回「全部」視角，否則搜尋輸入會看似沒有效果
+        state.perspective = 'all';
+        for (const b of els.perspectiveChips.querySelectorAll('.chip')) {
+          b.classList.toggle('is-active', b.dataset.perspective === 'all');
+        }
+        renderCategoryChips();
+      } else {
+        showInsights();
+        return;
+      }
+    }
 
     if (!hasQuery && !hasPerspective && !hasCategory) {
       showEmpty();
@@ -349,6 +374,7 @@
   function showEmpty() {
     els.results.hidden = true;
     els.overview.hidden = true;
+    els.insights.hidden = true;
     els.emptyState.hidden = false;
     syncHashFromState();
   }
@@ -356,6 +382,7 @@
   function showResults() {
     els.emptyState.hidden = true;
     els.overview.hidden = true;
+    els.insights.hidden = true;
     els.results.hidden = false;
     syncHashFromState();
   }
@@ -363,8 +390,23 @@
   function showCategoryOverview() {
     els.emptyState.hidden = true;
     els.results.hidden = true;
+    els.insights.hidden = true;
     els.overview.hidden = false;
     renderCategoryOverview();
+    syncHashFromState();
+  }
+
+  function showInsights() {
+    if (!els.panel.hidden) closePanel();
+    els.emptyState.hidden = true;
+    els.results.hidden = true;
+    els.overview.hidden = true;
+    els.insights.hidden = false;
+    if (!els.insights.dataset.rendered) {
+      els.insights.innerHTML = state.data.insightsHtml || '<p class="no-results">尚未產生跨視角洞察內容</p>';
+      els.insights.dataset.rendered = '1';
+    }
+    window.scrollTo({ top: 0 });
     syncHashFromState();
   }
 
