@@ -17,6 +17,14 @@
     overviewSummary: document.getElementById('overview-summary'),
     overviewList: document.getElementById('overview-list'),
     insights: document.getElementById('insights'),
+    persona: document.getElementById('persona'),
+    personaTitles: document.getElementById('persona-titles'),
+    personaLabel: document.getElementById('persona-label'),
+    personaTitleList: document.getElementById('persona-title-list'),
+    personaTab: document.getElementById('persona-tab'),
+    personaContentTitle: document.getElementById('persona-content-title'),
+    personaContentBody: document.getElementById('persona-content-body'),
+    personaClose: document.getElementById('persona-close'),
     panel: document.getElementById('panel'),
     panelBody: document.getElementById('panel-body'),
     panelBack: document.getElementById('panel-back'),
@@ -35,6 +43,7 @@
     perspective: 'all',
     category: null,    // "<perspective>:<code>" or null
     panelStack: [],
+    personaSection: null,  // null = title list; integer = expanded section index
   };
 
   // ----- DOM helpers -----
@@ -177,6 +186,7 @@
         }
         return;
       }
+      state.personaSection = null;  // reset persona on perspective change
       state.perspective = v;
       if (state.category && v !== 'all') {
         const [p] = state.category.split(':');
@@ -207,6 +217,30 @@
     });
 
     els.insights.addEventListener('click', (e) => {
+      const tag = e.target.closest('.ref-tag');
+      if (!tag) return;
+      e.preventDefault();
+      const id = `${tag.dataset.perspective}-${tag.dataset.code}`;
+      if (state.cardsById.has(id)) {
+        openCard(id, { resetStack: true });
+      }
+    });
+
+    els.personaTitleList.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-persona-section]');
+      if (!btn) return;
+      const idx = parseInt(btn.dataset.personaSection, 10);
+      if (Number.isNaN(idx)) return;
+      state.personaSection = idx;
+      renderPersona();
+    });
+
+    els.personaClose.addEventListener('click', () => {
+      state.personaSection = null;
+      renderPersona();
+    });
+
+    els.personaContentBody.addEventListener('click', (e) => {
       const tag = e.target.closest('.ref-tag');
       if (!tag) return;
       e.preventDefault();
@@ -389,6 +423,7 @@
     els.results.hidden = true;
     els.overview.hidden = true;
     els.insights.hidden = true;
+    els.persona.hidden = true;
     els.emptyState.hidden = false;
     syncHashFromState();
   }
@@ -397,6 +432,7 @@
     els.emptyState.hidden = true;
     els.overview.hidden = true;
     els.insights.hidden = true;
+    els.persona.hidden = true;
     els.results.hidden = false;
     syncHashFromState();
   }
@@ -406,6 +442,7 @@
     els.results.hidden = true;
     els.insights.hidden = true;
     els.overview.hidden = false;
+    renderPersona();
     renderCategoryOverview();
     syncHashFromState();
   }
@@ -415,6 +452,7 @@
     els.emptyState.hidden = true;
     els.results.hidden = true;
     els.overview.hidden = true;
+    els.persona.hidden = true;
     els.insights.hidden = false;
     if (!els.insights.dataset.rendered) {
       els.insights.innerHTML = state.data.insightsHtml || '<p class="no-results">尚未產生綜合分析內容</p>';
@@ -422,6 +460,53 @@
     }
     window.scrollTo({ top: 0 });
     syncHashFromState();
+  }
+
+  function renderPersona() {
+    const persp = state.perspective;
+    const personas = state.data.personas || {};
+    const persona = personas[persp];
+    if (!persona || !persona.sections.length) {
+      els.persona.hidden = true;
+      return;
+    }
+    els.persona.hidden = false;
+    els.persona.dataset.persp = persp;
+    els.personaLabel.textContent = `使用者描述-${persp === 'student' ? '學生' : '老師'}`;
+
+    if (state.personaSection == null) {
+      // State A: title list only; no tab in header
+      els.personaTitles.hidden = false;
+      els.personaTab.hidden = true;
+      els.personaContentBody.hidden = true;
+      clear(els.personaTitleList);
+      persona.sections.forEach((sec, idx) => {
+        const btn = h(
+          'button',
+          {
+            type: 'button',
+            class: 'persona-title-btn',
+            dataset: { personaSection: String(idx) },
+          },
+          sec.title
+        );
+        els.personaTitleList.appendChild(btn);
+      });
+    } else {
+      // State B: tab shows in header, content panel replaces title list
+      const sec = persona.sections[state.personaSection];
+      if (!sec) {
+        state.personaSection = null;
+        renderPersona();
+        return;
+      }
+      els.personaTitles.hidden = true;
+      els.personaTab.hidden = false;
+      els.personaContentBody.hidden = false;
+      els.personaContentTitle.textContent = sec.title;
+      els.personaContentBody.innerHTML = sec.html;
+      els.personaContentBody.scrollTop = 0;
+    }
   }
 
   function renderCategoryOverview() {

@@ -15,6 +15,10 @@ SOURCES = {
     "teacher": ROOT / "_分析" / "彙整" / "產品需求清單-老師視角.md",
 }
 INSIGHTS_PATH = ROOT / "_分析" / "彙整" / "綜合分析.md"
+PERSONAS = {
+    "student": ROOT / "_分析" / "彙整" / "使用者描述-學生.md",
+    "teacher": ROOT / "_分析" / "彙整" / "使用者描述-老師.md",
+}
 OUT = Path(__file__).resolve().parent / "data.json"
 
 PERSPECTIVE_LABEL_TO_KEY = {"老師": "teacher", "學生": "student"}
@@ -152,20 +156,24 @@ def _inline(
     return re.sub(r"&lt;br\s*/?&gt;", "<br>", result)
 
 
-def md_to_html(md: str) -> str:
+def md_to_html(md: str, root_perspective: str | None = None) -> str:
     """Minimal Markdown → HTML for the insights file.
 
     Supports: # / ## / ### headings, paragraphs, **bold**, bullet lists,
     pipe tables, horizontal rules. Detects `**啟示**:` paragraphs and wraps
     them with `class="insight-callout"`. Tags X.N references with
     `<button class="ref-tag">` so the frontend can open the matching card.
+
+    `root_perspective` (when set) is the fallback view used to tag refs that
+    have no nearer signal. Used for persona files where the whole document
+    is about one perspective.
     """
     lines = md.split("\n")
     out: list[str] = []
     i = 0
     n = len(lines)
     in_list = False
-    section_perspective: str | None = None  # 由 **只有X端...** 設定，由 ## 或 --- 重置
+    section_perspective: str | None = root_perspective  # 由 **只有X端...** 設定，由 ## 或 --- 重置回 root
     pending_list_default: str | None = None  # 來自前一個段落的視角；下一個清單繼承
     list_default: str | None = None          # 當前清單繼承來的視角
 
@@ -191,7 +199,7 @@ def md_to_html(md: str) -> str:
 
         if stripped == "---":
             close_list()
-            section_perspective = None
+            section_perspective = root_perspective
             pending_list_default = None
             out.append("<hr>")
             i += 1
@@ -204,8 +212,8 @@ def md_to_html(md: str) -> str:
             level = len(m.group(1))
             title = m.group(2).strip()
             if level <= 2:
-                # H1/H2 為頂層章節，重置視角
-                section_perspective = None
+                # H1/H2 為頂層章節，重置視角回 root（一般文件 root 為 None）
+                section_perspective = root_perspective
             elif level == 3:
                 # H3 為章節內的 sub-section，若標題明確含「學生」或「老師」（不同時出現）就承襲為該視角
                 has_s = "學生" in title
@@ -240,7 +248,9 @@ def md_to_html(md: str) -> str:
                 for idx, c in enumerate(cells):
                     persp = col_persp[idx] if idx < len(col_persp) else None
                     # 表格 cell 一律用欄位視角強制標註；明確 [X.Y|師生] 仍會 override
-                    out.append(f"<td>{_inline(c, force_perspective=persp)}</td>")
+                    # 沒欄位視角時退回 root_perspective（給 persona 表格使用）
+                    cell_persp = persp or root_perspective
+                    out.append(f"<td>{_inline(c, force_perspective=cell_persp)}</td>")
                 out.append("</tr>")
                 i += 1
             out.append("</tbody></table>")
@@ -423,6 +433,54 @@ def parse_file(path: Path, perspective: str):
     return categories, cards
 
 
+PERSONA_H1_RE = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
+PERSONA_SPLIT_RE = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
+
+
+def parse_persona(path: Path, perspective: str) -> dict:
+    """Parse a persona markdown file into title + ordered sections (HTML).
+
+    Structure expected:
+        # 使用者描述：學生
+        來源／盤點時間 等 metadata（會被略過）
+        ---
+        ## 群像
+        ...
+        ---
+        ## 老師重視的面向
+        ...
+
+    Each ## block becomes one section. The whole document is rendered with
+    `root_perspective=perspective` so any X.Y refs default to that view.
+    """
+    text = path.read_text(encoding="utf-8")
+    h1_match = PERSONA_H1_RE.search(text)
+    title = h1_match.group(1) if h1_match else f"使用者描述（{perspective}）"
+
+    parts = PERSONA_SPLIT_RE.split(text)
+    # parts[0] = before first ## (metadata, discard)
+    # parts[1] = first section title, parts[2] = first section body, ...
+    sections: list[dict] = []
+    for idx in range(1, len(parts), 2):
+        sec_title = parts[idx].strip()
+        body = parts[idx + 1] if idx + 1 < len(parts) else ""
+        body_lines = body.split("\n")
+        while body_lines and (
+            not body_lines[0].strip() or body_lines[0].strip() == "---"
+        ):
+            body_lines.pop(0)
+        while body_lines and (
+            not body_lines[-1].strip() or body_lines[-1].strip() == "---"
+        ):
+            body_lines.pop()
+        body_md = "\n".join(body_lines)
+        sections.append({
+            "title": sec_title,
+            "html": md_to_html(body_md, root_perspective=perspective),
+        })
+    return {"title": title, "sections": sections}
+
+
 def main():
     all_cards: list[dict] = []
     all_categories: dict[str, list[dict]] = {}
@@ -448,6 +506,11 @@ def main():
     if INSIGHTS_PATH.exists():
         insights_html = md_to_html(INSIGHTS_PATH.read_text(encoding="utf-8"))
 
+    personas: dict[str, dict] = {}
+    for perspective, path in PERSONAS.items():
+        if path.exists():
+            personas[perspective] = parse_persona(path, perspective)
+
     output = {
         "generatedAt": date.today().isoformat(),
         "counts": {
@@ -458,6 +521,7 @@ def main():
         "categories": all_categories,
         "cards": all_cards,
         "insightsHtml": insights_html,
+        "personas": personas,
     }
 
     OUT.write_text(
@@ -469,6 +533,8 @@ def main():
     print(f"  student: {output['counts']['student']} cards")
     print(f"  teacher: {output['counts']['teacher']} cards")
     print(f"  total:   {output['counts']['total']} cards")
+    for p, persona in personas.items():
+        print(f"  persona-{p}: {len(persona['sections'])} sections")
     if unresolved:
         print(f"  ⚠ {len(unresolved)} unresolved relation references (using fallback titles):")
         for u in unresolved[:10]:

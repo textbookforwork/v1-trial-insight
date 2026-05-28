@@ -823,6 +823,212 @@ mark {
   border-color: var(--teacher);
 }
 
+/* ===== Persona ===== */
+.persona {
+  margin-bottom: 24px;
+}
+
+.persona-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.persona[data-persp="student"] .persona-card { border-left: 3px solid var(--student); }
+.persona[data-persp="teacher"] .persona-card { border-left: 3px solid var(--teacher); }
+
+.persona-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 0 20px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  min-height: 40px;
+  position: relative;
+}
+
+.persona-label {
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  line-height: 1.4;
+  padding-bottom: 7px;
+  flex-shrink: 0;
+}
+
+/* Folder tab embedded in the header bar; visually attaches to body below */
+.persona-tab {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 5px 6px 6px 14px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1;
+  max-width: calc(100% - 12em);
+}
+
+.persona-tab-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.persona[data-persp="student"] .persona-tab-title { color: var(--student); }
+.persona[data-persp="teacher"] .persona-tab-title { color: var(--teacher); }
+
+.persona-body {
+  background: var(--surface);
+}
+
+/* State A: title list (compact) */
+.persona-titles {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 18px 8px;
+}
+
+.persona-title-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.persona-title-btn {
+  font-size: 13px;
+  padding: 7px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: color .12s;
+  font-family: inherit;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+}
+
+.persona-title-btn:last-child {
+  border-bottom: none;
+}
+
+.persona[data-persp="student"] .persona-title-btn:hover { color: var(--student); }
+.persona[data-persp="teacher"] .persona-title-btn:hover { color: var(--teacher); }
+
+.persona-close {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  color: var(--text-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .12s, color .12s;
+}
+
+.persona-close:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* State B: content panel sits below the tab; no separate border (frame is from header + tab) */
+.persona-content-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  max-height: 38vh;
+  overflow-y: auto;
+  padding: 16px 22px 20px;
+}
+
+.persona-content-body p {
+  margin: 0 0 8px;
+}
+
+.persona-content-body p:last-child { margin-bottom: 0; }
+
+.persona-content-body ul {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.persona-content-body li {
+  margin-bottom: 6px;
+}
+
+.persona-content-body li:last-child { margin-bottom: 0; }
+
+.persona-content-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0 4px;
+}
+
+.persona-content-body th,
+.persona-content-body td {
+  border: 1px solid var(--border);
+  padding: 7px 10px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.persona-content-body th {
+  background: var(--surface-2);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.persona-content-body .ref-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 1px 6px;
+  margin: 0 2px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.persona-content-body .ref-tag-student {
+  background: var(--student-soft);
+  color: var(--student);
+  border-color: var(--student-soft);
+}
+
+.persona-content-body .ref-tag-teacher {
+  background: var(--teacher-soft);
+  color: var(--teacher);
+  border-color: var(--teacher-soft);
+}
+
+.persona-content-body .ref-tag:hover {
+  background: #fff;
+  border-color: var(--border-strong);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
   .card-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -845,4 +1051,10 @@ mark {
   .panel-title { font-size: 19px; }
   .empty-state { margin-top: 40px; }
   .empty-title { font-size: 18px; }
+  .persona-header { padding: 0 14px; }
+  .persona-titles { padding: 4px 14px 6px; }
+  .persona-content-body { max-height: 50vh; padding: 14px 16px 18px; }
+  .persona-content-body table { font-size: 12.5px; }
+  .persona-content-body th,
+  .persona-content-body td { padding: 6px 8px; }
 }
