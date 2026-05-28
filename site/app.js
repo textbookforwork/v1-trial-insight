@@ -289,9 +289,17 @@
     }
 
     if (hasQuery) {
-      const ids = new Set(cards.map((c) => c.id));
-      const fuseResults = state.fuse.search(state.query).filter((r) => ids.has(r.item.id));
-      cards = fuseResults.map((r) => r.item);
+      // 代碼型 query（如 "J.8"、"A.13"、"j8"）走精確比對；Fuse 對短代碼模糊比對會把
+      // 每個 J 跟每個 8 拆開命中，雜訊太多
+      const codeMatch = state.query.toUpperCase().match(/^([A-Z])\.?(\d+)$/);
+      if (codeMatch) {
+        const code = `${codeMatch[1]}.${codeMatch[2]}`;
+        cards = cards.filter((c) => c.code === code);
+      } else {
+        const ids = new Set(cards.map((c) => c.id));
+        const fuseResults = state.fuse.search(state.query).filter((r) => ids.has(r.item.id));
+        cards = fuseResults.map((r) => r.item);
+      }
     }
 
     renderList(cards);
