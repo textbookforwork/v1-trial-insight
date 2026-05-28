@@ -50,6 +50,7 @@ RELATION_RE = re.compile(
     r"^-\s+\*\*關聯（(學生|老師)視角(?:・(衝突))?）\*\*[：:]\s*(.*)$"
 )
 TRACE_RE = re.compile(r"^<!--\s*追溯[：:]\s*\[(.+?)\]\((.+?)\)\s*-->\s*$")
+PRIO_RE = re.compile(r"^<!--\s*prio:(P[0-4])\s+freq:(\d+)\s*-->\s*$")
 REL_ITEM_RE = re.compile(r"([A-Z]\.\d+)\s+(.+?)(?=\s*[；;]\s*[A-Z]\.\d+|$)")
 
 
@@ -248,8 +249,8 @@ def md_to_html(md: str, root_perspective: str | None = None) -> str:
                 for idx, c in enumerate(cells):
                     persp = col_persp[idx] if idx < len(col_persp) else None
                     # 表格 cell 一律用欄位視角強制標註；明確 [X.Y|師生] 仍會 override
-                    # 沒欄位視角時退回 root_perspective（給 persona 表格使用）
-                    cell_persp = persp or root_perspective
+                    # 沒欄位視角時依序退回 section_perspective（H3 sub-section）→ root_perspective
+                    cell_persp = persp or section_perspective or root_perspective
                     out.append(f"<td>{_inline(c, force_perspective=cell_persp)}</td>")
                 out.append("</tr>")
                 i += 1
@@ -371,6 +372,8 @@ def parse_file(path: Path, perspective: str):
                 "relations": [],
                 "sourceLink": None,
                 "sourceLabel": None,
+                "prio": None,
+                "freq": None,
             }
             cards.append(current_card)
             if current_category:
@@ -425,6 +428,13 @@ def parse_file(path: Path, perspective: str):
         if m:
             current_card["sourceLabel"] = m.group(1)
             current_card["sourceLink"] = m.group(2)
+            i += 1
+            continue
+
+        m = PRIO_RE.match(line)
+        if m:
+            current_card["prio"] = m.group(1)
+            current_card["freq"] = int(m.group(2))
             i += 1
             continue
 

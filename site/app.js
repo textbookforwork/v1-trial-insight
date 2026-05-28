@@ -2,6 +2,33 @@
   'use strict';
 
   const PERSPECTIVE_LABEL = { student: '學生視角', teacher: '老師視角' };
+  const PRIO_LABEL = {
+    P0: '阻斷課堂',
+    P1: '嚴重損害體驗',
+    P2: '效率損失可繞過',
+    P3: '優化建議',
+    P4: '願景',
+  };
+  // Accepted forms: P0 / p0 / prio:P0 / prioP0  (matched per-whitespace-token)
+  const PRIO_QUERY_RE = /^(?:PRIO:?)?(P[0-4])$/;
+
+  // Split a query into an optional priority token + remaining keyword text.
+  //   "P0"        → { prio: "P0", keyword: "" }
+  //   "P0 翻頁"   → { prio: "P0", keyword: "翻頁" }
+  //   "翻頁 P0"   → { prio: "P0", keyword: "翻頁" }
+  //   "翻頁"      → { prio: null, keyword: "翻頁" }
+  //   "P0 P1"     → { prio: "P0", keyword: "P1" }  (only the first prio token is consumed)
+  function parseQuery(q) {
+    const tokens = (q || '').split(/\s+/).filter((t) => t.length > 0);
+    let prio = null;
+    const kw = [];
+    for (const t of tokens) {
+      const m = t.toUpperCase().match(PRIO_QUERY_RE);
+      if (m && !prio) prio = m[1];
+      else kw.push(t);
+    }
+    return { prio, keyword: kw.join(' ') };
+  }
 
   // ----- DOM refs -----
   const els = {
@@ -20,6 +47,7 @@
     persona: document.getElementById('persona'),
     personaTitles: document.getElementById('persona-titles'),
     personaLabel: document.getElementById('persona-label'),
+    personaLabelText: document.getElementById('persona-label-text'),
     personaTitleList: document.getElementById('persona-title-list'),
     personaTab: document.getElementById('persona-tab'),
     personaContentTitle: document.getElementById('persona-content-title'),
@@ -240,6 +268,20 @@
       renderPersona();
     });
 
+    const backToStateA = () => {
+      if (state.personaSection != null) {
+        state.personaSection = null;
+        renderPersona();
+      }
+    };
+    els.personaLabel.addEventListener('click', backToStateA);
+    els.personaLabel.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        backToStateA();
+      }
+    });
+
     els.personaContentBody.addEventListener('click', (e) => {
       const tag = e.target.closest('.ref-tag');
       if (!tag) return;
@@ -323,22 +365,31 @@
     }
 
     if (hasQuery) {
-      // 代碼型 query：精確比對，避開 Fuse 對短代碼把 J 跟 .8 拆開命中的雜訊
-      //   "J.8" / "j8" / "j.8"  → 該卡片
-      //   "J"   / "j."          → 整個 J 大項
-      const upper = state.query.toUpperCase();
-      const codeMatch = upper.match(/^([A-Z])\.?(\d+)$/);
-      const categoryMatch = upper.match(/^([A-Z])\.?$/);
-      if (codeMatch) {
-        const code = `${codeMatch[1]}.${codeMatch[2]}`;
-        cards = cards.filter((c) => c.code === code);
-      } else if (categoryMatch) {
-        const cat = categoryMatch[1];
-        cards = cards.filter((c) => c.category === cat);
-      } else {
-        const ids = new Set(cards.map((c) => c.id));
-        const fuseResults = state.fuse.search(state.query).filter((r) => ids.has(r.item.id));
-        cards = fuseResults.map((r) => r.item);
+      // 解析 query：可選的優先級 token（P0–P4，可與其他詞混合）＋ 其餘關鍵字
+      //   "P0"        → 優先級過濾 P0
+      //   "P0 翻頁"   → 先過濾 P0，再對剩餘 cards 跑 Fuse 搜尋「翻頁」
+      //   "翻頁"      → 純關鍵字 Fuse 搜尋
+      //   "J.8"       → 精確比對該卡片（避開 Fuse 把 J 跟 .8 拆開的雜訊）
+      //   "J" / "j."  → 整個 J 大項
+      const { prio, keyword } = parseQuery(state.query);
+      if (prio) {
+        cards = cards.filter((c) => c.prio === prio);
+      }
+      if (keyword) {
+        const upper = keyword.toUpperCase();
+        const codeMatch = upper.match(/^([A-Z])\.?(\d+)$/);
+        const categoryMatch = upper.match(/^([A-Z])\.?$/);
+        if (codeMatch) {
+          const code = `${codeMatch[1]}.${codeMatch[2]}`;
+          cards = cards.filter((c) => c.code === code);
+        } else if (categoryMatch) {
+          const cat = categoryMatch[1];
+          cards = cards.filter((c) => c.category === cat);
+        } else {
+          const ids = new Set(cards.map((c) => c.id));
+          const fuseResults = state.fuse.search(keyword).filter((r) => ids.has(r.item.id));
+          cards = fuseResults.map((r) => r.item);
+        }
       }
     }
 
@@ -350,7 +401,11 @@
   function renderSummary(count) {
     const parts = [];
     parts.push(`${count} 項`);
-    if (state.query) parts.push(`符合「${state.query}」`);
+    if (state.query) {
+      const { prio, keyword } = parseQuery(state.query);
+      if (prio) parts.push(`優先級 ${prio} · ${PRIO_LABEL[prio]}`);
+      if (keyword) parts.push(`符合「${keyword}」`);
+    }
     if (state.perspective !== 'all') parts.push(PERSPECTIVE_LABEL[state.perspective]);
     if (state.category) {
       const [p, code] = state.category.split(':');
@@ -391,7 +446,9 @@
   function buildHighlighted(tag, className, text) {
     const node = document.createElement(tag);
     node.className = className;
-    appendHighlighted(node, text, state.query);
+    // 只用關鍵字部分高亮；優先級 token（P0–P4）不該被當文字高亮
+    const { keyword } = parseQuery(state.query);
+    appendHighlighted(node, text, keyword);
     return node;
   }
 
@@ -472,7 +529,8 @@
     }
     els.persona.hidden = false;
     els.persona.dataset.persp = persp;
-    els.personaLabel.textContent = `使用者描述-${persp === 'student' ? '學生' : '老師'}`;
+    els.persona.dataset.state = state.personaSection == null ? 'a' : 'b';
+    els.personaLabelText.textContent = `使用者描述-${persp === 'student' ? '學生' : '老師'}`;
 
     if (state.personaSection == null) {
       // State A: title list only; no tab in header

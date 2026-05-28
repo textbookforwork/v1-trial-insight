@@ -11,7 +11,7 @@
   --student-soft: #e7f6ee;
   --teacher: #3b82f6;
   --teacher-soft: #ecf2fe;
-  --warn: #d97706;
+  --warn: #eb7900;
   --warn-soft: #fef6e7;
   --shadow-1: 0 1px 2px rgba(0,0,0,0.04);
   --shadow-panel: -16px 0 48px rgba(0,0,0,0.08);
@@ -850,14 +850,23 @@ mark {
 }
 
 .persona-label {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text);
   letter-spacing: 0.04em;
   font-weight: 700;
   line-height: 1.4;
   padding-bottom: 7px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  outline: none;
 }
+
+.persona[data-persp="student"] .persona-label { color: var(--student); }
+.persona[data-persp="teacher"] .persona-label { color: var(--teacher); }
+
+.persona[data-state="b"] .persona-label { cursor: pointer; }
 
 /* Folder tab embedded in the header bar; visually attaches to body below */
 .persona-tab {
@@ -897,7 +906,7 @@ mark {
 .persona-titles {
   display: flex;
   flex-direction: column;
-  padding: 6px 18px 8px;
+  padding: 6px 18px 8px 28px;
 }
 
 .persona-title-list {
@@ -906,7 +915,7 @@ mark {
 }
 
 .persona-title-btn {
-  font-size: 13px;
+  font-size: 14px;
   padding: 7px 0;
   background: transparent;
   border: none;
@@ -918,7 +927,22 @@ mark {
   line-height: 1.5;
   text-align: left;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+.persona-title-btn::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+
+.persona[data-persp="student"] .persona-title-btn::before { background: var(--student); }
+.persona[data-persp="teacher"] .persona-title-btn::before { background: var(--teacher); }
 
 .persona-title-btn:last-child {
   border-bottom: none;
@@ -1052,7 +1076,7 @@ mark {
   .empty-state { margin-top: 40px; }
   .empty-title { font-size: 18px; }
   .persona-header { padding: 0 14px; }
-  .persona-titles { padding: 4px 14px 6px; }
+  .persona-titles { padding: 4px 14px 6px 22px; }
   .persona-content-body { max-height: 50vh; padding: 14px 16px 18px; }
   .persona-content-body table { font-size: 12.5px; }
   .persona-content-body th,
