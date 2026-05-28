@@ -24,6 +24,12 @@
 
 [hidden] { display: none !important; }
 
+html {
+  /* 永遠保留垂直捲軸空間，避免切換視圖時內容左右彈動 */
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
 html, body {
   margin: 0;
   padding: 0;
