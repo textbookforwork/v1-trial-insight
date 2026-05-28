@@ -417,7 +417,7 @@
     els.overview.hidden = true;
     els.insights.hidden = false;
     if (!els.insights.dataset.rendered) {
-      els.insights.innerHTML = state.data.insightsHtml || '<p class="no-results">尚未產生跨視角洞察內容</p>';
+      els.insights.innerHTML = state.data.insightsHtml || '<p class="no-results">尚未產生綜合分析內容</p>';
       els.insights.dataset.rendered = '1';
     }
     window.scrollTo({ top: 0 });

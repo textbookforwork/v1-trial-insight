@@ -14,7 +14,7 @@ SOURCES = {
     "student": ROOT / "_分析" / "彙整" / "產品需求清單-學生視角.md",
     "teacher": ROOT / "_分析" / "彙整" / "產品需求清單-老師視角.md",
 }
-INSIGHTS_PATH = ROOT / "_分析" / "彙整" / "跨視角洞察.md"
+INSIGHTS_PATH = ROOT / "_分析" / "彙整" / "綜合分析.md"
 OUT = Path(__file__).resolve().parent / "data.json"
 
 PERSPECTIVE_LABEL_TO_KEY = {"老師": "teacher", "學生": "student"}
@@ -35,7 +35,8 @@ PERSPECTIVE_MARKER_RE = re.compile(
     r"老師講什麼|學生講什麼|老師完全沒寫|學生不會講|"
     r"老師對 AI|學生對 AI|老師對|學生對|老師清單|學生清單|老師只|學生只)"
 )
-SECTION_MARKER_RE = re.compile(r"^\*\*只有(學生|老師)端")
+# 章節視角 marker：開頭 **老師端... 或 **學生端... 或 **只有X端... 都會設定該章節的預設視角
+SECTION_MARKER_RE = re.compile(r"^\*\*(?:只有)?(學生|老師)端")
 
 CATEGORY_RE = re.compile(r"^##\s+([A-Z])\.\s+(.+?)\s*$")
 ITEM_RE = re.compile(r"^###\s+([A-Z]\.\d+)\s+(.+?)\s*$")
@@ -199,10 +200,22 @@ def md_to_html(md: str) -> str:
         m = HEADING_RE.match(line)
         if m:
             close_list()
-            section_perspective = None
             pending_list_default = None
             level = len(m.group(1))
-            out.append(f"<h{level}>{_inline(m.group(2).strip())}</h{level}>")
+            title = m.group(2).strip()
+            if level <= 2:
+                # H1/H2 為頂層章節，重置視角
+                section_perspective = None
+            elif level == 3:
+                # H3 為章節內的 sub-section，若標題明確含「學生」或「老師」（不同時出現）就承襲為該視角
+                has_s = "學生" in title
+                has_t = "老師" in title
+                if has_s and not has_t:
+                    section_perspective = "student"
+                elif has_t and not has_s:
+                    section_perspective = "teacher"
+                # 若兩者都含或都不含，保留前一個 section_perspective
+            out.append(f"<h{level}>{_inline(title)}</h{level}>")
             i += 1
             continue
 
@@ -271,10 +284,18 @@ def md_to_html(md: str) -> str:
             while j < n and not lines[j].strip():
                 j += 1
             next_is_list = j < n and LIST_ITEM_RE.match(lines[j].strip())
-            if not after and next_is_list:
-                # 「**啟示**：」獨立成段、後面緊接著條列：合併成一個整框
-                callout_default = section_perspective
-                out.append('<div class="insight-callout"><p><strong>啟示</strong></p><ul>')
+            if next_is_list:
+                # 「**啟示**…」後面緊接條列：整段（含可能的 lead-in 句）＋條列合併成一個整框
+                para_default = _block_default_perspective(stripped, section_perspective)
+                out.append('<div class="insight-callout">')
+                if after:
+                    out.append(
+                        f'<p>{_inline(stripped, default_perspective=para_default)}</p>'
+                    )
+                else:
+                    out.append('<p><strong>啟示</strong></p>')
+                out.append('<ul>')
+                callout_default = para_default or section_perspective
                 i = j
                 while i < n and LIST_ITEM_RE.match(lines[i].strip()):
                     item = LIST_ITEM_RE.match(lines[i].strip()).group(1).strip()
