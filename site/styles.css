@@ -948,17 +948,12 @@ mark {
   gap: 12px;
 }
 
-.persona-title-btn::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text-3);
+.persona-title-icon {
   flex-shrink: 0;
 }
 
-.persona[data-persp="student"] .persona-title-btn::before { background: var(--student); }
-.persona[data-persp="teacher"] .persona-title-btn::before { background: var(--teacher); }
+.persona[data-persp="student"] .persona-title-icon { color: var(--student); }
+.persona[data-persp="teacher"] .persona-title-icon { color: var(--teacher); }
 
 .persona-title-btn:last-child {
   border-bottom: none;

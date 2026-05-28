@@ -545,9 +545,13 @@
             type: 'button',
             class: 'persona-title-btn',
             dataset: { personaSection: String(idx) },
-          },
-          sec.title
+          }
         );
+        btn.insertAdjacentHTML(
+          'beforeend',
+          '<svg class="persona-title-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="m560-120-57-57 144-143H200v-480h80v400h367L503-544l56-57 241 241-240 240Z"/></svg>'
+        );
+        btn.appendChild(document.createTextNode(sec.title));
         els.personaTitleList.appendChild(btn);
       });
     } else {
