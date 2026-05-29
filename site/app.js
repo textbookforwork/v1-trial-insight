@@ -245,6 +245,24 @@
     });
 
     els.insights.addEventListener('click', (e) => {
+      // 目錄錨點：用 scrollIntoView 滾到對應 H2，避免動到 location.hash
+      // （hashchange 會把 hash 當 SPA 路由解析、reset state 回首頁）
+      const tocLink = e.target.closest('.toc-link');
+      if (tocLink) {
+        e.preventDefault();
+        const href = tocLink.getAttribute('href') || '';
+        if (href.startsWith('#')) {
+          const target = els.insights.querySelector(href);
+          if (target) {
+            // 補償 sticky 頂端 bar 的高度，避免標題被擋住；多留 8px 透氣
+            const header = document.querySelector('.site-header');
+            const offset = (header ? header.offsetHeight : 0) + 8;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }
+        return;
+      }
       const tag = e.target.closest('.ref-tag');
       if (!tag) return;
       e.preventDefault();

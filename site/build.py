@@ -53,6 +53,15 @@ TRACE_RE = re.compile(r"^<!--\s*追溯[：:]\s*\[(.+?)\]\((.+?)\)\s*-->\s*$")
 PRIO_RE = re.compile(r"^<!--\s*prio:(P[0-4])\s+freq:(\d+)\s*-->\s*$")
 REL_ITEM_RE = re.compile(r"([A-Z]\.\d+)\s+(.+?)(?=\s*[；;]\s*[A-Z]\.\d+|$)")
 
+# 綜合分析章節錨點：H2 標題開頭的中文編號（一、二、三、...）對應到 sec-1/sec-2/sec-3...
+CN_NUMS = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
+
+
+def _section_anchor(title: str) -> str | None:
+    if title and title[0] in CN_NUMS:
+        return f"sec-{CN_NUMS[title[0]]}"
+    return None
+
 
 def _escape_html(s: str) -> str:
     return (
@@ -177,13 +186,15 @@ def md_to_html(md: str, root_perspective: str | None = None) -> str:
     section_perspective: str | None = root_perspective  # 由 **只有X端...** 設定，由 ## 或 --- 重置回 root
     pending_list_default: str | None = None  # 來自前一個段落的視角；下一個清單繼承
     list_default: str | None = None          # 當前清單繼承來的視角
+    toc_pending: bool = False                # 緊接 `## 目錄` 之後的清單視為目錄，項目轉為錨點連結
 
     def close_list():
-        nonlocal in_list, list_default
+        nonlocal in_list, list_default, toc_pending
         if in_list:
             out.append("</ul>")
             in_list = False
             list_default = None
+            toc_pending = False
 
     def _column_perspective(cell: str) -> str | None:
         """Determine perspective from a table header cell."""
@@ -224,7 +235,17 @@ def md_to_html(md: str, root_perspective: str | None = None) -> str:
                 elif has_t and not has_s:
                     section_perspective = "teacher"
                 # 若兩者都含或都不含，保留前一個 section_perspective
-            out.append(f"<h{level}>{_inline(title)}</h{level}>")
+            if level == 2:
+                anchor = _section_anchor(title)
+                if anchor:
+                    out.append(f'<h2 id="{anchor}">{_inline(title)}</h2>')
+                    toc_pending = False
+                else:
+                    out.append(f"<h2>{_inline(title)}</h2>")
+                    if title == "目錄":
+                        toc_pending = True
+            else:
+                out.append(f"<h{level}>{_inline(title)}</h{level}>")
             i += 1
             continue
 
@@ -273,7 +294,15 @@ def md_to_html(md: str, root_perspective: str | None = None) -> str:
                 or list_default
                 or section_perspective
             )
-            out.append(f"<li>{_inline(item_text, default_perspective=item_default)}</li>")
+            inner = _inline(item_text, default_perspective=item_default)
+            if toc_pending:
+                anchor = _section_anchor(item_text)
+                if anchor:
+                    out.append(f'<li><a class="toc-link" href="#{anchor}">{inner}</a></li>')
+                else:
+                    out.append(f"<li>{inner}</li>")
+            else:
+                out.append(f"<li>{inner}</li>")
             i += 1
             continue
 

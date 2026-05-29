@@ -678,6 +678,7 @@ mark {
   padding-top: 28px;
   border-top: 1px solid var(--border);
   line-height: 1.45;
+  scroll-margin-top: 16px;
 }
 
 .insights h2:first-of-type {
@@ -792,6 +793,18 @@ mark {
   border-radius: var(--radius);
   padding: 14px 22px 14px 38px;
   border: 1px solid var(--border);
+}
+
+/* 目錄連結：點擊跳到對應章節，hover 出現底線回饋 */
+.insights .toc-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.insights .toc-link:hover {
+  color: var(--accent, #2563eb);
+  border-bottom-color: currentColor;
 }
 
 /* 內文中對應到清單編號的小膠囊 tag，點擊會在側欄展開該卡片 */
