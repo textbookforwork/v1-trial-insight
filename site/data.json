@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-29",
+  "generatedAt": "2026-06-22",
   "counts": {
-    "student": 87,
-    "teacher": 84,
-    "total": 171
+    "student": 89,
+    "teacher": 86,
+    "total": 175
   },
   "categories": {
     "student": [
@@ -15,7 +15,7 @@
       {
         "code": "B",
         "name": "互動模組（星際巡航與其他互動）",
-        "count": 8
+        "count": 9
       },
       {
         "code": "C",
@@ -35,7 +35,7 @@
       {
         "code": "F",
         "name": "學生希望的學習內容形式",
-        "count": 12
+        "count": 13
       },
       {
         "code": "G",
@@ -62,7 +62,7 @@
       {
         "code": "B",
         "name": "互動模組（星際巡航等）",
-        "count": 8
+        "count": 9
       },
       {
         "code": "C",
@@ -102,7 +102,7 @@
       {
         "code": "J",
         "name": "跨議題（產品策略與設計取捨）",
-        "count": 13
+        "count": 14
       }
     ]
   },
@@ -266,13 +266,13 @@
       "categoryName": "操作介面與基本互動",
       "code": "A.8",
       "title": "觸控筆會點不到目標位置／寫字時跳出其他頁面",
-      "problem": "學生畫畫或寫字時，觸控筆無法精準點到想要畫的位置，且寫一寫畫面會自動跳到另一頁，必須一直返回重來。「你用筆按下去，要畫畫的時候沒辦法點擊你要的地方。」／跨校問卷也有「筆很難操控」的同樣抱怨（跨校問卷）。",
+      "problem": "學生畫畫或寫字時，觸控筆無法精準點到想要畫的位置，且寫一寫畫面會自動跳到另一頁，必須一直返回重來。「你用筆按下去，要畫畫的時候沒辦法點擊你要的地方。」／跨校問卷也有「筆很難操控」的同樣抱怨（跨校問卷）。岡山學生（英語）則反映電子白板的畫筆太小、筆跟手的觸控對不上，且白板無法放大、不夠直覺。「那個筆跟手的觸控〔對不上〕。那個電子白板不能放大……他沒有那麼直覺」（岡山學生）。",
       "observation": null,
       "relations": [],
       "sourceLink": "../主題-功能/01-操作介面與互動模組.md",
       "sourceLabel": "01-操作介面與互動模組#海山國小（自然・03-17）",
       "prio": "P1",
-      "freq": 2
+      "freq": 3
     },
     {
       "id": "student-A.9",
@@ -592,6 +592,34 @@
       "freq": 1
     },
     {
+      "id": "student-B.9",
+      "perspective": "student",
+      "category": "B",
+      "categoryName": "互動模組（星際巡航與其他互動）",
+      "code": "B.9",
+      "title": "希望「探索」模式加入可解釋的影片",
+      "problem": "岡山學生（英語，本次首場試用「探索」）希望除了單字練習、桌面練習、對話之外，探索模式裡能再加入可解釋的影片。「如果探索模式裡面有影片可以解釋，就大概可以〔更好〕……除了單字練習、〔課〕桌練習還有對話，是大概都可以〔加上〕解釋的影片」（岡山學生）。",
+      "observation": null,
+      "relations": [
+        {
+          "perspective": "student",
+          "code": "F.1",
+          "title": "希望課本能補充課外影片",
+          "conflict": false
+        },
+        {
+          "perspective": "teacher",
+          "code": "B.9",
+          "title": "「探索」情境對話希望增加可聽發音的「劇情」段落",
+          "conflict": false
+        }
+      ],
+      "sourceLink": "../中介筆記/英語科/06-17%20岡山國小-學生.md",
+      "sourceLabel": "06-17 岡山國小-學生",
+      "prio": "P3",
+      "freq": 1
+    },
+    {
       "id": "student-C.1",
       "perspective": "student",
       "category": "C",
@@ -768,13 +796,13 @@
       "categoryName": "小細胞 AI",
       "code": "D.6",
       "title": "小細胞認不得自己的名字、且簡單題目反而答不出來",
-      "problem": "海山學生反映小細胞有反直覺的行為：「比較高級一點的問題」反而能正常回答，但講它自己的名字「小細胞」時，它卻不知道小細胞是什麼。「小細胞，它就是問它一些問題，它可能就是會無法……就是像比較高級一點就會回答比較正常。比如說就是講它的名字，然後它可能就會說，假如說我講小細胞，它就不知道小細胞是什麼」（海山學生）——AI 對自身設定／基本辨識缺乏一致性，學生因此對它的能力產生混淆。",
+      "problem": "海山學生反映小細胞有反直覺的行為：「比較高級一點的問題」反而能正常回答，但講它自己的名字「小細胞」時，它卻不知道小細胞是什麼。「小細胞，它就是問它一些問題，它可能就是會無法……就是像比較高級一點就會回答比較正常。比如說就是講它的名字，然後它可能就會說，假如說我講小細胞，它就不知道小細胞是什麼」（海山學生）——AI 對自身設定／基本辨識缺乏一致性，學生因此對它的能力產生混淆。岡山學生（英語）跨科再次驗證：希望「讓小細胞知道自己是小細胞」、要有記憶與角色設定，因為對話兩次都得到一樣的回應。「讓他知道他是個小細胞，這樣跟他對話比較好玩……我跟他〔對話〕兩次，然後兩次都講一樣的話」（岡山學生）。",
       "observation": null,
       "relations": [],
       "sourceLink": "../主題-功能/02-小細胞AI.md",
       "sourceLabel": "02-小細胞AI#海山國小（自然・03-17）",
       "prio": "P2",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "student-D.7",
@@ -1191,7 +1219,7 @@
       "categoryName": "整體 AI 使用態度與其他 AI 平台",
       "code": "E.10",
       "title": "希望 AI 更有情感、更像人",
-      "problem": "學生期望 AI 不只是工具，而是「有情感、像小朋友」的對話對象，體驗會更貼近真人。「就是希望有一點情感。」／「可以變得像小朋友。」（復興國中學生）",
+      "problem": "學生期望 AI 不只是工具，而是「有情感、像小朋友」的對話對象，體驗會更貼近真人。「就是希望有一點情感。」／「可以變得像小朋友。」（復興國中學生）岡山學生（英語）把常用的 AI 形容成「越聊越懂的朋友」，並指出換一個 AI 就不像同一個朋友。「對我來說像一個人，就是跟我聊天的一個朋友」「如果是第一次〔使用〕的話，我會覺得她不像朋友……後來……她越來越了解我」（岡山學生）。",
       "observation": null,
       "relations": [
         {
@@ -1204,7 +1232,7 @@
       "sourceLink": "../主題-功能/02-小細胞AI.md",
       "sourceLabel": "02-小細胞AI#復興國中（數學・04-15）",
       "prio": "P3",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "student-E.11",
@@ -1300,7 +1328,7 @@
       "categoryName": "整體 AI 使用態度與其他 AI 平台",
       "code": "E.15",
       "title": "學生想要「直接掃題給答案」型的 AI",
-      "problem": "學生對未來 AI 最直觀的期待就是掃題秒得答案，跟產品設計上「自學引導」的初衷正面衝突，是必須面對的設計取捨。「我希望以後的 AI 可以遇到不會的題目，軟體掃一下，答案就出來了！」（翁子學生）",
+      "problem": "學生對未來 AI 最直觀的期待就是掃題秒得答案，跟產品設計上「自學引導」的初衷正面衝突，是必須面對的設計取捨。「我希望以後的 AI 可以遇到不會的題目，軟體掃一下，答案就出來了！」（翁子學生）岡山學生（英語）同樣偏好 AI 直接給答案，並抱怨 AI 會「轉一轉、轉回第一步」。「都很希望他直接跟我說答案。因為我有時候問他問題，他都轉一轉，他會轉回第一步」（岡山學生）。（同場亦有學生會主動問「原理／怎麼解出來的」以求記得，見中介筆記）",
       "observation": null,
       "relations": [
         {
@@ -1319,7 +1347,7 @@
       "sourceLink": "../主題-跨議題/05-AI使用態度.md",
       "sourceLabel": "05-AI使用態度#翁子國小（自然・02-25）",
       "prio": "P4",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "student-E.16",
@@ -1695,6 +1723,34 @@
       "freq": 1
     },
     {
+      "id": "student-F.13",
+      "perspective": "student",
+      "category": "F",
+      "categoryName": "學生希望的學習內容形式",
+      "code": "F.13",
+      "title": "希望教科書變成「像小說」「像動畫影片」的形式",
+      "problem": "岡山學生（英語）想像未來教科書若能像小說或動畫影片那樣呈現會更吸引人。「變成像小說〔的形式〕，因為小說〔的方式〕很〔吸引人〕」（Olivia）／「就是像一部動畫……一個也是課程，〔課內〕的課程」（Rayray）——把娛樂性的內容形式投射到學習工具上，呼應三人「動漫／日語／小說」的興趣輪廓。",
+      "observation": null,
+      "relations": [
+        {
+          "perspective": "student",
+          "code": "F.1",
+          "title": "希望課本能補充課外影片",
+          "conflict": false
+        },
+        {
+          "perspective": "student",
+          "code": "F.7",
+          "title": "希望內容能立體化／VR 化",
+          "conflict": false
+        }
+      ],
+      "sourceLink": "../中介筆記/英語科/06-17%20岡山國小-學生.md",
+      "sourceLabel": "06-17 岡山國小-學生",
+      "prio": "P4",
+      "freq": 1
+    },
+    {
       "id": "student-G.1",
       "perspective": "student",
       "category": "G",
@@ -1779,7 +1835,7 @@
       "categoryName": "登入、權限與時間管理",
       "code": "G.4",
       "title": "在家用平板會被家長視為「在玩遊戲」",
-      "problem": "學生反映即便用平板做學習，家長一看到就會說「你在玩遊戲」，平台缺乏可以讓家長辨識「這是學習活動」的訊號。「就是被家長看見，就會拿那個你在玩遊戲的藉口。」（復興國中學生）",
+      "problem": "學生反映即便用平板做學習，家長一看到就會說「你在玩遊戲」，平台缺乏可以讓家長辨識「這是學習活動」的訊號。「就是被家長看見，就會拿那個你在玩遊戲的藉口。」（復興國中學生）岡山學生（英語）則反映家長以較強的監控管理在家使用：定位、限制網路、設休眠時間。「他知道我的位置，然後我的網路也是他給的，然後他有給我設立休眠時間」（岡山學生）。",
       "observation": null,
       "relations": [
         {
@@ -1804,7 +1860,7 @@
       "sourceLink": "../主題-跨議題/07-系統穩定與外部生態.md",
       "sourceLabel": "07-系統穩定與外部生態#家長角色",
       "prio": "P4",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "student-G.5",
@@ -2525,6 +2581,28 @@
       "freq": 1
     },
     {
+      "id": "teacher-B.9",
+      "perspective": "teacher",
+      "category": "B",
+      "categoryName": "互動模組（星際巡航等）",
+      "code": "B.9",
+      "title": "「探索」情境對話希望增加可聽發音的「劇情」段落",
+      "problem": "岡山老師（英語，本次首場深度試用「探索」）高度肯定「探索」由上傳圖片生成的情境對話「符合主題、有邏輯、幾乎沒 bug」，並希望再增加可聽發音的「劇情」段落，因為高成就學生「劇情比較不會念，反而單字會念」。「希望還可以多一個，譬如說劇情，他也可以聽那個發音」（岡山老師）。",
+      "observation": "探索為 V2 新增功能，是本次英語場最受老師肯定的部分（上傳 Google 地圖截圖即生成「How can I get to ⋯」、上傳 bike 圖片即生成 bike 單字／句型／DIY 練習，且生成單字附例句利於高成就差異化）；本條為其延伸優化，主題彙整待建立「探索」專章。",
+      "relations": [
+        {
+          "perspective": "student",
+          "code": "B.9",
+          "title": "希望「探索」模式加入可解釋的影片",
+          "conflict": false
+        }
+      ],
+      "sourceLink": "../中介筆記/英語科/06-17%20岡山國小-老師.md",
+      "sourceLabel": "06-17 岡山國小-老師",
+      "prio": "P3",
+      "freq": 1
+    },
+    {
       "id": "teacher-C.1",
       "perspective": "teacher",
       "category": "C",
@@ -2848,7 +2926,7 @@
       "categoryName": "整體 AI 使用態度與外部 AI 平台",
       "code": "D.5",
       "title": "AI 承接基礎重複問題，讓老師專注差異化教學",
-      "problem": "蘇漢哲老師期待 AI 能扮演「一比一自主學習教練」的角色，承接學生的基礎重複問題，讓老師可以更精準地對不同孩子做差異化教學。「AI 可以當……像 Bloom 都有提到一比一的自主學習教練……老師可以更精準的去對不同的孩子做差異化教學」（蘇漢哲老師）。",
+      "problem": "蘇漢哲老師期待 AI 能扮演「一比一自主學習教練」的角色，承接學生的基礎重複問題，讓老師可以更精準地對不同孩子做差異化教學。「AI 可以當……像 Bloom 都有提到一比一的自主學習教練……老師可以更精準的去對不同的孩子做差異化教學」（蘇漢哲老師）。岡山老師（英語）同向且更具體，希望 AI 能依學生程度產生對應教材／測驗卷。「學生可以輸入自己不懂的問題，或者是可以產生符合那位學生程度的教材、測驗卷等等，然後去貼合每個學生自己的程度」（岡山老師）。",
       "observation": null,
       "relations": [
         {
@@ -2867,7 +2945,7 @@
       "sourceLink": "../主題-功能/02-小細胞AI.md",
       "sourceLabel": "02-小細胞AI#育賢國中",
       "prio": "P4",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "teacher-D.6",
@@ -2876,13 +2954,13 @@
       "categoryName": "整體 AI 使用態度與外部 AI 平台",
       "code": "D.6",
       "title": "AI 評分機制擴展到課本各處，省下大量人工批改",
-      "problem": "黃偉誠老師反映他很喜歡星際巡航的 AI 評分功能，希望這個功能可以落實到課本各處。「如果這個功能可以落實到那個每一本教科書的某一個地方，我覺得是很棒的」（黃偉誠老師）——AI 評分目前只在星際巡航，未串到課本主體。（屬「AI 評分擴展到平台各處」的通則期待，非針對小細胞本體。）",
+      "problem": "黃偉誠老師反映他很喜歡星際巡航的 AI 評分功能，希望這個功能可以落實到課本各處。「如果這個功能可以落實到那個每一本教科書的某一個地方，我覺得是很棒的」（黃偉誠老師）——AI 評分目前只在星際巡航，未串到課本主體。（屬「AI 評分擴展到平台各處」的通則期待，非針對小細胞本體。）岡山老師（英語）則具體希望把口說 AI「五顆星＋指出具體發音優點」的讚揚式評分，延伸到 AI 幫批改學生在平板書寫的單字／作業並回傳分數或建議。「他們書寫在平板上之後，直接上傳，AI 就直接幫忙改，我就可以直接看到他們的分數，或者是 AI 給他們的建議……它不是給一個具體的分數，它是告訴他你哪一個音發得很好」（岡山老師）。",
       "observation": null,
       "relations": [],
       "sourceLink": "../主題-功能/02-小細胞AI.md",
       "sourceLabel": "02-小細胞AI#海山國小",
       "prio": "P4",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "teacher-D.7",
@@ -2995,7 +3073,7 @@
       "categoryName": "整體 AI 使用態度與外部 AI 平台",
       "code": "D.11",
       "title": "對學生在課堂使用 AI 仍需重新規範",
-      "problem": "Sandy 老師反映學生太熟悉家裡的 AI 產品，會把使用習慣帶進課堂。「他們現在太熟悉這些產品……他們很容易把他們平常在家裡使用的習慣帶到上課，要重新規範他們。我覺得這一塊我還在想要怎麼做，所以我還沒有開始在課堂上〔使用〕」（Sandy 老師）——平台需提供「課堂規範模式」協助老師建立邊界。",
+      "problem": "Sandy 老師反映學生太熟悉家裡的 AI 產品，會把使用習慣帶進課堂。「他們現在太熟悉這些產品……他們很容易把他們平常在家裡使用的習慣帶到上課，要重新規範他們。我覺得這一塊我還在想要怎麼做，所以我還沒有開始在課堂上〔使用〕」（Sandy 老師）——平台需提供「課堂規範模式」協助老師建立邊界。岡山老師（英語）則已發展出具體做法：用 Canva AI 前先設規則（給例句、要求用英文、較難才用中文且以挖空方式），並告知學生查詢會留紀錄、要為自己查的東西負責；同時指出 ChatGPT／Gemini 有年齡限制不應讓學生用，小細胞、Canva AI 因有規範才放手。「需要讓學生先了解你使用 AI 的界線、倫理是什麼，之後才能再使用 AI」（岡山老師）。",
       "observation": null,
       "relations": [
         {
@@ -3014,7 +3092,7 @@
       "sourceLink": "../主題-跨議題/05-AI使用態度.md",
       "sourceLabel": "05-AI使用態度#龍埔國小",
       "prio": "P3",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "teacher-D.12",
@@ -3154,13 +3232,13 @@
       "categoryName": "自編教材功能期待",
       "code": "F.1",
       "title": "希望直接匯入 PDF 檔，因為書商給的就是 PDF",
-      "problem": "蘇漢哲老師希望平台能直接吃 PDF 檔，不必先把 PDF 截圖再上傳。「可不可以直接匯入 PDF 的檔案，因為書商給我們的檔案是 PDF 的」（蘇漢哲老師）——對接書商既有檔案格式的具體需求。",
+      "problem": "蘇漢哲老師希望平台能直接吃 PDF 檔，不必先把 PDF 截圖再上傳。「可不可以直接匯入 PDF 的檔案，因為書商給我們的檔案是 PDF 的」（蘇漢哲老師）——對接書商既有檔案格式的具體需求。岡山老師（英語）同樣指出目前只有圖片能上傳、PDF 不行。「我可能之後會想要用 PDF，因為目前就是 PDF 沒辦法上傳，但圖片可以」（岡山老師）。",
       "observation": null,
       "relations": [],
       "sourceLink": "../主題-功能/03-教師工具與自編教材.md",
       "sourceLabel": "03-教師工具與自編教材#育賢國中",
       "prio": "P2",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "teacher-F.2",
@@ -3169,13 +3247,13 @@
       "categoryName": "自編教材功能期待",
       "code": "F.2",
       "title": "希望一鍵匯入既有簡報或 PDF，降低備課負擔",
-      "problem": "楊宗榮老師指出大部分老師的教材都存在 PPT 上，如果能一鍵匯入既有簡報或 PDF 直接轉成課程內容，老師會更願意用。「對老師而言自編教材蠻累的，大部分老師的教材都留在簡報上。如果能『一鍵匯入』簡報或 PDF 檔直接轉成課程內容，老師負擔會小一點」（楊宗榮老師）。Sandy 老師也以「網路版 PPT」的角度看美感教科書，認同這方向。",
+      "problem": "楊宗榮老師指出大部分老師的教材都存在 PPT 上，如果能一鍵匯入既有簡報或 PDF 直接轉成課程內容，老師會更願意用。「對老師而言自編教材蠻累的，大部分老師的教材都留在簡報上。如果能『一鍵匯入』簡報或 PDF 檔直接轉成課程內容，老師負擔會小一點」（楊宗榮老師）。Sandy 老師也以「網路版 PPT」的角度看美感教科書，認同這方向。岡山老師（英語）更直接希望把既有投影片匯入後、再用教科書內的遮罩補強。「我會希望有一個檔案上傳的功能……把投影片直接匯進去，然後再用教科書裡面的遮罩去補強這些」（岡山老師）。",
       "observation": null,
       "relations": [],
       "sourceLink": "../主題-功能/03-教師工具與自編教材.md",
       "sourceLabel": "03-教師工具與自編教材#翁子國小",
       "prio": "P3",
-      "freq": 2
+      "freq": 3
     },
     {
       "id": "teacher-F.3",
@@ -3272,7 +3350,7 @@
       "categoryName": "自編教材功能期待",
       "code": "F.8",
       "title": "希望嵌入既有資源（觀星 App、Canva 等）做串接",
-      "problem": "黃偉誠老師描述自然科的地科實驗大部分學生「都沒有感覺」，所以他現有的工作流程是用 Canva 抓網路圖片做討論、再搭觀星 App 模擬天象來補無法直接觀察的現象。「絕大部分的現象小朋友都沒有感覺，所以我只能用圖片。那我們就就是網路抓圖片，然後來討論，所以 Canva 會為主⋯⋯我們平常上課會用一些觀星軟體。那他就可以用那些觀星軟體來取代這些事情。」（黃偉誠老師）——他並未主動要求「嵌入功能」，但他描述的工作流程暗示：若平台能直接串接這些既有外部資源（含訪談者主動點名的 LoiLoNote、Canva），老師就不必為了平台放棄熟用工具，能直接延伸現有教學設計。",
+      "problem": "黃偉誠老師描述自然科的地科實驗大部分學生「都沒有感覺」，所以他現有的工作流程是用 Canva 抓網路圖片做討論、再搭觀星 App 模擬天象來補無法直接觀察的現象。「絕大部分的現象小朋友都沒有感覺，所以我只能用圖片。那我們就就是網路抓圖片，然後來討論，所以 Canva 會為主⋯⋯我們平常上課會用一些觀星軟體。那他就可以用那些觀星軟體來取代這些事情。」（黃偉誠老師）——他並未主動要求「嵌入功能」，但他描述的工作流程暗示：若平台能直接串接這些既有外部資源（含訪談者主動點名的 LoiLoNote、Canva），老師就不必為了平台放棄熟用工具，能直接延伸現有教學設計。岡山老師（英語）明確點名希望與 Canva、NotebookLM 互相匯入整合。「我可能會接觸到 Canva，或者是 NotebookLM，如果可以匯入進去，各個網站的融合，對教學會更好用」（岡山老師）。",
       "observation": null,
       "relations": [
         {
@@ -3291,7 +3369,7 @@
       "sourceLink": "../主題-功能/03-教師工具與自編教材.md",
       "sourceLabel": "03-教師工具與自編教材#海山國小",
       "prio": "P4",
-      "freq": 1
+      "freq": 2
     },
     {
       "id": "teacher-F.9",
@@ -3994,9 +4072,49 @@
       "sourceLabel": "06-教師備課與專業#復興國中",
       "prio": "P3",
       "freq": 1
+    },
+    {
+      "id": "teacher-J.14",
+      "perspective": "teacher",
+      "category": "J",
+      "categoryName": "跨議題（產品策略與設計取捨）",
+      "code": "J.14",
+      "title": "學生對平板／數位的興趣高於對老師，課堂注意力難收回",
+      "problem": "岡山老師反映學生太喜歡平板與數位教科書，會直接沉浸進去、聽不到老師講話。「他們對平板的興趣會高於對老師的興趣，對數位教科書的興趣會高於對老師講的話的興趣……痛點就在於我要怎麼樣讓學生們知道什麼時候來使用數位、什麼時候該把數位先放在旁邊」（岡山老師）。她目前的做法是請學生把平板「轉向老師」以收回注意力——平台缺乏協助老師控制「何時用數位、何時收起」節奏的工具或引導。",
+      "observation": null,
+      "relations": [
+        {
+          "perspective": "student",
+          "code": "A.13",
+          "title": "跟不上老師頁數就不知道現在要幹嘛",
+          "conflict": false
+        },
+        {
+          "perspective": "student",
+          "code": "I.1",
+          "title": "學生看不到老師節奏時不會主動探索小細胞",
+          "conflict": false
+        },
+        {
+          "perspective": "teacher",
+          "code": "G.4",
+          "title": "希望具備監控／鎖機／控制學生螢幕的能力",
+          "conflict": false
+        },
+        {
+          "perspective": "teacher",
+          "code": "D.11",
+          "title": "對學生在課堂使用 AI 仍需重新規範",
+          "conflict": false
+        }
+      ],
+      "sourceLink": "../中介筆記/英語科/06-17%20岡山國小-老師.md",
+      "sourceLabel": "06-17 岡山國小-老師",
+      "prio": "P3",
+      "freq": 1
     }
   ],
-  "insightsHtml": "<h1>綜合分析：對讀兩份需求清單</h1>\n<p>來源：產品需求清單-老師視角（84 項，A–J 分組）＋ 產品需求清單-學生視角（87 項，A–I 分組）</p>\n<p>盤點時間：2026-05</p>\n<h2>目錄</h2>\n<ul>\n<li><a class=\"toc-link\" href=\"#sec-1\">一、師生既要同步，又要自主</a></li>\n<li><a class=\"toc-link\" href=\"#sec-2\">二、AI 對學生是「自學伴侶」，對老師是「教學副駕」</a></li>\n<li><a class=\"toc-link\" href=\"#sec-3\">三、串起老師的教學閉環：教學→提問→回應→收斂→後續</a></li>\n<li><a class=\"toc-link\" href=\"#sec-4\">四、單側盲區：兩端各自看不見對方在意什麼</a></li>\n<li><a class=\"toc-link\" href=\"#sec-5\">五、從「可用」到「驚艷」之間的落差：V1 站在哪裡</a></li>\n</ul>\n<hr>\n<h2 id=\"sec-1\">一、師生既要同步，又要自主</h2>\n<p>師生兩端同時抱著兩個方向的需求——既想跟對方同步、又想保有自己的節奏。乍看是「監控 vs 自由」的價值對立，其實兩個需求都來自同一個教室結構性問題：班級程度落差大，導致每個人的學習斷裂點不一樣。</p>\n<p><strong>同步面：兩端想看同一個東西，只是視線方向相反</strong></p>\n<table><thead><tr>\n<th>議題</th>\n<th>老師視角</th>\n<th>學生視角</th>\n</tr></thead><tbody>\n<tr>\n<td>看別人的頁面</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.4\">G.4</button> 希望具備監控／鎖機／控制學生螢幕的能力</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"G.3\">G.3</button> 希望能掌握同學頁數避免有人不認真</td>\n</tr>\n<tr>\n<td>對話紀錄保留</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button> 希望保留學生對話紀錄並能匯出 Excel 做分析</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.12\">E.12</button> 希望 AI 能把產生的筆記抄下來方便複習</td>\n</tr>\n<tr>\n<td>看見彼此的畫面</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.2\">G.2</button> 提供 iPad 模擬器讓老師看到學生畫面</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"I.5\">I.5</button> 學生最有感的是「跟老師用一樣的工具」<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.13\">A.13</button> 跟不上老師頁數就不知道現在要幹嘛</td>\n</tr>\n</tbody></table>\n<p><strong>自主面：兩端的「監控」與「自由」都在回應同一個落差</strong></p>\n<ul>\n<li>老師端要鎖機／監控（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.4\">G.4</button> 希望具備監控／鎖機／控制學生螢幕的能力）的真正動因是 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.2\">J.2</button> 班級程度落差大，數位活動讓快的學生過早完成、慢的跟不上</li>\n<li>學生端要自學自由（<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"G.2\">G.2</button> 自學自由：希望能自己往下翻、不必等老師；<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.10\">F.10</button> 希望內容不要限定在課本範圍、想學的就能先學）的動因也是同一件事的反面——<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.13\">A.13</button> 跟不上老師頁數就完全失去方向</li>\n</ul>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：在設計上，「同步」和「自主」其實需要同時被滿足。</p>\n<ul>\n<li><strong>同步面</strong>：可以朝「雙向同步」的方向設計。讓老師能掌握學生的畫面，同時也讓學生清楚知道自己跟在老師的節奏上。如果只做老師專用的監控面板，就會忽略掉學生那種「能和老師平起平坐」的強烈心理需求（<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"I.5\">I.5</button>）。</li>\n<li><strong>自主面</strong>：可以提供「個別進度追蹤」的功能。這樣一來，學生能按照自己的步調學習，老師也能透過儀表板看顧到每個人的差異。這也呼應了老師端 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.6\">G.6</button> 提到的觀察（林文智老師對 LUMIO 的看法）：給予學生自由書寫與學習彈性的同時，自然也需要配套的防濫用機制，兩者一體兩面。</li>\n</ul></div>\n<hr>\n<h2 id=\"sec-2\">二、AI 對學生是「自學伴侶」，對老師是「教學副駕」</h2>\n<p>設計 AI 時必須區分對象。學生和老師對 AI 的期待截然不同：學生在意的是工具好不好用、給的答案可不可信；老師則在乎 AI 要怎麼融入教學，以及能不能減輕備課負擔。如果想用同一套 AI 設定打發兩邊，就會發生觀察員在現場看到的狀況：平台把小細胞設定為「自學工具」，結果學生只想要直接拿答案，完全不想主動探索。因此，針對不同使用者，AI 的角色和設計必須有所區隔。</p>\n<h3>給學生的 AI：自學伴侶</h3>\n<p><strong>關注的面向</strong></p>\n<table><thead><tr>\n<th>面向</th>\n<th>項目</th>\n</tr></thead><tbody>\n<tr>\n<td>體驗品質</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.1\">D.1</button> 卡頓<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.2\">D.2</button> 當掉<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.5\">D.5</button> 答非所問<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.6\">D.6</button> 認不得自己的名字<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.4\">E.4</button> 中文比英文容易錯<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.5\">E.5</button> 跳針<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.6\">E.6</button> 被質疑就換答案</td>\n</tr>\n<tr>\n<td>期待功能</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.10\">D.10</button> 一次給多個來源網站讓自己挑<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.7\">E.7</button> 一步步解＋指出修正<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.9\">E.9</button> 聲音問答<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.10\">E.10</button> 更有情感<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.12\">E.12</button> 筆記能保留複習</td>\n</tr>\n<tr>\n<td>使用態度</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.13\">E.13</button> 對 AI 答案傾向「直接相信、直接照抄」<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.17\">E.17</button> 用 AI 寫作業靠解析自我判斷<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.18\">E.18</button> 求助順序「同學→AI→老師」（老師排第三）<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.15\">E.15</button>／<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.16\">E.16</button> 想要「掃題給答案」</td>\n</tr>\n</tbody></table>\n<p><strong>這個 AI 應該長怎樣</strong></p>\n<ul>\n<li><strong>要直接、要可信</strong>：學生通常會全盤接收 AI 的答案，所以平台有必要主動標示資訊的可信度並附上來源。遇到無法處理的問題時，AI 也應該坦白說「我不會」，避免胡亂瞎掰。</li>\n<li><strong>要溫度、要有步驟</strong>：解題過程可以像家教一樣一步步講解，學生做錯時能指出具體的錯誤環節並提供類似題練習。此外，介面可以支援語音和畫圖輸入，回覆的語氣也可以更帶點人情味。</li>\n<li><strong>要保留學習痕跡</strong>：能把對話過程整理成筆記，方便學生日後複習，讓 AI 不單單只是一次性的問答機，還能累積實質的學習成果。</li>\n</ul>\n<p><strong>AI 的角色與定位：「同學的替代品」</strong></p>\n<p>現實情況中，學生的求助順序往往是「先問同學、再問 AI、最後才找老師」。AI 可以扮演日常自學伴侶，幫忙解答學生不敢問老師或同學也答不出來的疑難雜症。不過，AI 沒辦法取代老師的地位。就如盧佳怡老師指出的，AI 終究無法取代人際互動，學生也表達過「希望老師上課，不想只掃 QR Code 自己看」。在設計上，我們可以接受學生會用 AI 來寫作業或找答案的事實，同時透過介面上的防呆提示（例如標示可信度、來源或坦承不確定）來培養學生交叉驗證的習慣，這樣會比單方面期望學生主動配合「引導式思考」來得實際。</p>\n<h3>給老師的 AI：教學副駕</h3>\n<p><strong>關注的面向</strong></p>\n<table><thead><tr>\n<th>面向</th>\n<th>項目</th>\n</tr></thead><tbody>\n<tr>\n<td>AI 之於學生學習</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.1\">D.1</button>「給答案 vs 引導」設計取捨<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.2\">D.2</button> 知識型直接給／探究型才反問<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.3\">D.3</button> AI 反問讓學生覺得「沒完沒了」<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.4\">D.4</button> AI 家教需即時掌握能力節點<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.5\">D.5</button> AI 承接基礎讓老師專注差異化<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.6\">D.6</button> AI 評分擴展<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.7\">D.7</button> 分組討論完即時分析</td>\n</tr>\n<tr>\n<td>倫理紅線</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.9\">D.9</button> 學習外包與抄襲文化（AI 變成新一代抄襲管道）<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.11\">D.11</button> 學生課堂使用需重新規範<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.13\">D.13</button> AI 仍以真人為主</td>\n</tr>\n<tr>\n<td>AI 之於老師工作</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.8\">D.8</button> AI 出題基本概念可能錯、把關線不明確<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.10\">D.10</button> AI 寫成績單／教學文件看久了沒誠意<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.4\">C.4</button> 後台看不到學生問了小細胞什麼<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button> 想保留學生對話匯出 Excel 做分析<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.6\">C.6</button> 平台需提供「小細胞怎麼引導學生」的教學範例</td>\n</tr>\n</tbody></table>\n<p><strong>這個 AI 應該長怎樣</strong></p>\n<ul>\n<li><strong>可調整的彈性</strong>：像 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.1\">D.1</button> 提到的「給答案或給引導」，系統可以提供分流開關，讓老師根據「探究型」或「知識型」的教學目標自由切換。另外，搭配 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.11\">D.11</button> 期望的「課堂模式」，幫助老師在上課時拿捏學生的使用界線。</li>\n<li><strong>可監看與規範</strong>：老師需要透過後台看到學生問了 AI 什麼問題（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.4\">C.4</button>），甚至能把對話匯出成資料進行分析（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button>），以此因應 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.9\">D.9</button> 提到的抄襲疑慮。同時，AI 出題時也該附上信心度標示，方便老師評估與把關（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.8\">D.8</button>）。</li>\n<li><strong>分擔基礎工作</strong>：讓 AI 幫忙解答常見的重複性問題（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.5\">D.5</button>），老師就能把心力放在差異化教學上。當小組討論結束後，AI 也能即時分析並給予老師建議（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.7\">D.7</button>）。而在備課方面，平台可以提供引導範例（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.6\">C.6</button>），帶領老師更快熟悉如何運用 AI。</li>\n</ul>\n<p><strong>AI 的角色與定位：「教學的副駕」</strong></p>\n<p>它沒辦法取代老師，卻能接手重複性的教學庶務、執行基礎的差異化學習，並產出學習狀況報告，幫助老師更精準地抓到介入時機。對老師來說，AI 就像個「一對一自主學習教練」，讓差異化教學變得更可行。要達成這個目標的前提是，AI 的權限必須透明且能被監管，平台應該讓老師根據當下的教學設計來切換不同模式，把主導權交還給老師。</p>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：學生期待一個「更好用的 AI」，而老師需要的是「更可控的 AI」。因此平台有必要針對這兩種角色，分別設計不同的 AI 介面與功能定位。</p>\n<ul>\n<li><strong>給學生</strong>：扮演「自學伴侶」的角色。能直接給出答案、清楚標示資訊的可信度，並且幫忙把學習的過程記錄下來。</li>\n<li><strong>給老師</strong>：扮演「教學副駕」的角色。提供可以調整引導或給答案模式的開關，具備能監看學生狀況的後台，以及讓 AI 幫忙處理基礎教學工作的設定選項。</li>\n</ul></div>\n<p>雖然背後可能使用同一個 AI 模型，但針對師生的介面和設定入口需要徹底分開。如果不這麼做，就會重演「老師想用 AI 來引導思考，學生卻只想直接要答案」這種設計用意和實際使用場景互相打架的狀況。</p>\n<hr>\n<h2 id=\"sec-3\">三、串起老師的教學閉環：教學→提問→回應→收斂→後續</h2>\n<p><strong>老師端</strong>散在多個類別的「閉環」需求，其實在勾勒一個完整的課堂流程——從教學開始、到課後分析學情結束。把它們依教學節奏串成五個階段，每一階段都對應特定的功能需求；前四個階段恰好有學生端的需求對得起來，可以作為設計共識的補充。</p>\n<p><strong>1. 教學（內容呈現）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"I.1\">I.1</button> 期待一條龍互動鏈：簡報 → 電子書 → 互動 → 測驗 → IRS → 學生回傳（整段流程的願景）</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.1\">F.1</button> 希望課本能補充課外影片、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.5\">F.5</button> 希望加入語音功能學英文、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.6\">F.6</button> 希望課本能呈現「實驗流程影片」</li>\n</ul>\n<p><strong>2. 提問（把題目拋給學生）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"B.6\">B.6</button> 互動題缺搶答與作答上傳機制——老師要能即時拋問題、收答案</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"B.5\">B.5</button> 星際巡航希望加入更多題型與遊戲玩法（學生對「被提問」買單，前提是夠有趣）</li>\n</ul>\n<p><strong>3. 回應（學生作答後的即時反饋）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.4\">D.4</button> AI 家教需更即時、能掌握學生落點脈絡並引導到對應能力節點</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"B.7\">B.7</button> 互動模組聲音回饋不夠明顯（學生要即時聽到對錯）、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.7\">E.7</button> 希望 AI 解題能一步一步走、做錯指出修正、提供類似題</li>\n</ul>\n<p><strong>4. 收斂（讓學習不散掉）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"B.2\">B.2</button> 互動結束缺乏「收斂」步驟——學生玩完不記得學到什麼</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.3\">F.3</button> 希望讀完一頁就有題目加深印象、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.12\">E.12</button> 希望 AI 能把產生的筆記抄下來方便複習</li>\n</ul>\n<p><strong>5. 後續（課後學情分析）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.4\">C.4</button> 老師看不到學生問了小細胞什麼（教師後台缺口）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button> 希望保留學生對話紀錄並能匯出 Excel 做分析</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.3\">G.3</button> 希望學生畫完／寫完課本後能直接傳給老師檢視</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.5\">G.5</button> 期待老師端能「平台收集學生作答反應」</li>\n</ul>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：對老師來說，教學是一個連貫的流程。單一功能只解決一個階段的問題還不夠，重點在於能不能承接上一個動作的結果，並順利推進到下一步。以前這些環節之間的轉換，都得靠老師用口頭、板書或課堂規矩親自串連，作法比較受限。數位化帶來的好處，除了把這個過程搬到平台上自動化之外，更重要的是提供老師豐富的工具，讓每個轉換環節都能有更多變化。</p>\n<ul>\n<li><strong>多元性</strong>：光是「拋出問題」這個動作，就可以變化出搶答、小組討論、即時反饋（IRS）或個人作答等不同玩法。透過多樣的形式來吸引學生，老師就不用一直用同一套節奏帶領全班。</li>\n<li><strong>差異化</strong>：在「回饋與收斂」階段，系統可以根據學生的程度提供不同的引導路徑，或幫忙整理出專屬的筆記。這樣就能把過去極度仰賴老師臨場反應的差異化教學，變成系統流程中自然落實的一部分。</li>\n</ul></div>\n<p>要把這個教學迴圈設計得好，關鍵不只在於那五個階段，更在於階段和階段之間的「轉接點」能創造出多少彈性。這些轉接點本身，就是拿來激發學生動機和實現差異化教學的最佳設計發揮空間。</p>\n<hr>\n<h2 id=\"sec-4\">四、單側盲區：兩端各自看不見對方在意什麼</h2>\n<p>兩份清單對讀後，有些議題只在一端被密集提及、另一端完全空白。這不是優先級問題，是「若只聽一端會看不見」的風險。</p>\n<p><strong>只有學生端提（老師完全沒寫進清單）</strong>：</p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.10\">A.10</button> 畫筆顏色太少</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"H.2\">H.2</button> 希望能拉出便利貼小框框打字／<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"H.3\">H.3</button> 沒有打字框只能手寫，寫出來自己也看不懂（學生對 LoiloNote 風格的便利貼打字框有明確心理模型）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.8\">A.8</button> 觸控筆會點不到目標位置／寫字時跳出其他頁面</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.7\">F.7</button> 希望內容能立體化／VR 化</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.4\">E.4</button> AI 中文回覆比英文回覆更容易出錯</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.5\">E.5</button> AI 會跳針、重複同一句話／<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.6\">E.6</button> AI 被質疑後直接換成另一組答案</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"I.5\">I.5</button>「跟老師用一樣的工具」這個情感驅力</li>\n</ul>\n<p><strong>只有老師端提（學生不會講）</strong>：</p>\n<ul>\n<li>E、F 整組自編教材的 bug 與功能期待</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.5\">G.5</button> 學生作答資料回收／<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.7\">G.7</button> 自編教科書互看是「教師成長數位化」最確定有效的應用</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.6\">J.6</button> 老師跨不過工具門檻，平台再好也進不了課堂</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.7\">J.7</button> <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.8\">J.8</button> <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.9\">J.9</button> <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.10\">J.10</button> 家長端的整套策略（培訓家長、塑造合作而非對立、家庭支持崩壞）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.1\">J.1</button> 課內進度太緊（學生只感受到 <button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.13\">A.13</button> 跟不上，但講不出結構性原因）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.11\">J.11</button> 期待數位教科書承載差異化教學的可能性</li>\n</ul>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：師生兩端的盲點，剛好反映出他們各自真正在意的核心。</p>\n<ul>\n<li><strong>學生重視體驗與當下感受</strong>：學生一直提但老師沒注意到的，幾乎都圍繞在「用起來順不順」這件事上，例如畫筆好不好畫、有沒有輸入框、觸控準不準，以及 AI 講話自不自然。學生不懂什麼叫「教學設計」，他們只會很直接地抱怨「很卡」、「一直跳針」或「跟不上」。這些細節，其實就是決定他們願不願意繼續使用這套系統的隱形門檻。</li>\n<li><strong>老師重視教學流程與系統結構</strong>：老師關心但學生不會提的，大多屬於教學制度與運作流程的層面，包含自編教材的便利性、其他老師的上手難度、如何面對家長、趕進度的壓力，以及系統能不能支援差異化教學。簡單來說，學生在乎學習的體驗，而老師顧慮的是整套教學機制能不能順利運作下去。</li>\n</ul></div>\n<p>因此，我們在解讀這兩種使用回饋時需要區分清楚，把它們用在不同的決策上。學生的心聲可以幫產品「避免被使用者淘汰」，而老師的建議則能幫產品「真正順利走進教室」。</p>\n<hr>\n<h2 id=\"sec-5\">五、從「可用」到「驚艷」之間的落差：V1 站在哪裡</h2>\n<p>V1 試用版初期的目標很明確：要「能在課堂上用起來」。也就是老師能順利打開，學生能跟著操作，基本互動也跑得動。從訪談來看，這點確實達成了，沒人覺得它「完全用不下去」。</p>\n<p>但同時也很明顯，沒有人形容它「讓人驚艷」。V1 暫時還無法讓師生眼睛一亮，產生那種「非用不可」的依賴感。要理解這個落差，我們可以比較一下「師生真正記得的功能」和「我們實際投入的心力」，兩者其實不太對稱。</p>\n<p><strong>師生記得住的，是那些有特色的亮點功能</strong></p>\n<p>訪談中大家反覆提到、印象深刻的，都是那些定位清楚、很有辨識度的設計。它們雖然不一定最完整穩定，但都有明確的特色：</p>\n<ul>\n<li><strong>學生端</strong>：星際巡航的遊戲感、AI 對話的溫度與情感，以及互動模組裡的趣味環節。</li>\n<li><strong>老師端</strong>：自編教材帶來的掌控感、引導式 AI 的設計，還有教材跨班互看的共備潛力。</li>\n</ul>\n<p><strong>我們做了很多基礎建設，卻被視為「理所當然」</strong></p>\n<p>相對地，我們花了很多力氣做響應式設計、基礎工具列（畫筆、便利貼）、流暢的切頁和跨章節導覽。這些是平台可用的基礎，沒做一定會被罵，但做好了大家也覺得是應該的，很難因此產生主動推薦的動力。</p>\n<p>這就像大家覺得 Canva 或 LoiloNote 必不可少，關鍵在於它們獨特的工具組合讓人覺得「沒它不行」，往往無關乎響應式設計做得多完美。這種「不可取代」的感覺，其實建立在幾個強大的特色功能上，單靠完美的基礎建設是很難達到的。</p>\n<p><strong>V1 的現實與策略選擇</strong></p>\n<p>V1 受限於資源和時間，有一點 bug 和粗糙感在所難免，我們現階段也無法在每個細節都追平業界最頂尖的產品。但更重要的體會是：驚艷感無法單靠砸資源磨平基礎來換取，必定要靠少數特色功能來撐場。這不僅僅是資源夠不夠的問題，更是「你想讓使用者記住什麼」的策略選擇。</p>\n<p class=\"insight-callout\"><strong>啟示</strong>：可用性和驚艷感雖然是兩回事，但它們其實並不衝突。</p>\n<p>我們做數位教科書最核心的價值，其實是改變學習的「形式」。也就是把原本只能單向閱讀的紙本，轉變成可以互動、即時給回饋，還能配合不同學生節奏的載體。我們花很多心力做的響應式設計、基礎工具列和流暢的切換體驗，表面上看起來只是基礎工程，但這正是在落實「改變形式」這件事。只不過這些設計太基礎了，完全融入在操作過程裡，大家通常不會特別挑出來稱讚。這絕對不代表它不重要，因為它的價值早就體現在每一次順手的點擊之中。如果少了這層基礎，這套產品就只是把紙本貼到螢幕上，根本稱不上是真正的數位教科書。</p>\n<ul>\n<li><strong>基本盤撐起的是「形式上的改變」</strong>：像介面順暢度、跨裝置支援這些地基必須持續打穩，因為它們是讓「紙本變數位」真正成立的前提。如果這層沒做好，再多酷炫的功能都會被卡頓和當機給抵消掉。</li>\n<li><strong>亮點功能創造的是「主動推薦的記憶點」</strong>：師生會一直提起、甚至願意推薦給別人的，通常是那幾個定位很清楚、很有特色的設計（比如星際巡航或自編教材）。這層設計決定了產品到底值不值得被推薦。</li>\n</ul>\n<p>因此在下一階段，我們完全不需要在「打磨基本盤」和「開發亮點」之間做二選一，這兩件事必須同步推進。基本盤能讓產品真正在課堂上活下來，而亮點功能則能讓 V1 在大家口中留下具體的記憶點。在資源有限的情況下，我們該做的決策是把籌碼集中投資在哪一兩個特色功能上，同時繼續維護好系統基礎。前者讓 V1 站得住腳，後者讓 V1 被大家記住，兩者缺一不可。</p>",
+  "insightsHtml": "<h1>綜合分析：對讀兩份需求清單</h1>\n<p>來源：產品需求清單-老師視角（84 項，A–J 分組）＋ 產品需求清單-學生視角（87 項，A–I 分組）</p>\n<p>盤點時間：2026-05</p>\n<p>&gt; ※ 本檔為 2026-05 快照，尚未納入 2026-06 岡山國小（英語）資料；最新兩份需求清單已為老師 86 項、學生 89 項。岡山師生內容見 [中介筆記/英語科](../中介筆記/英語科/) 與兩份需求清單。</p>\n<h2>目錄</h2>\n<ul>\n<li><a class=\"toc-link\" href=\"#sec-1\">一、師生既要同步，又要自主</a></li>\n<li><a class=\"toc-link\" href=\"#sec-2\">二、AI 對學生是「自學伴侶」，對老師是「教學副駕」</a></li>\n<li><a class=\"toc-link\" href=\"#sec-3\">三、串起老師的教學閉環：教學→提問→回應→收斂→後續</a></li>\n<li><a class=\"toc-link\" href=\"#sec-4\">四、單側盲區：兩端各自看不見對方在意什麼</a></li>\n<li><a class=\"toc-link\" href=\"#sec-5\">五、從「可用」到「驚艷」之間的落差：V1 站在哪裡</a></li>\n</ul>\n<hr>\n<h2 id=\"sec-1\">一、師生既要同步，又要自主</h2>\n<p>師生兩端同時抱著兩個方向的需求——既想跟對方同步、又想保有自己的節奏。乍看是「監控 vs 自由」的價值對立，其實兩個需求都來自同一個教室結構性問題：班級程度落差大，導致每個人的學習斷裂點不一樣。</p>\n<p><strong>同步面：兩端想看同一個東西，只是視線方向相反</strong></p>\n<table><thead><tr>\n<th>議題</th>\n<th>老師視角</th>\n<th>學生視角</th>\n</tr></thead><tbody>\n<tr>\n<td>看別人的頁面</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.4\">G.4</button> 希望具備監控／鎖機／控制學生螢幕的能力</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"G.3\">G.3</button> 希望能掌握同學頁數避免有人不認真</td>\n</tr>\n<tr>\n<td>對話紀錄保留</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button> 希望保留學生對話紀錄並能匯出 Excel 做分析</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.12\">E.12</button> 希望 AI 能把產生的筆記抄下來方便複習</td>\n</tr>\n<tr>\n<td>看見彼此的畫面</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.2\">G.2</button> 提供 iPad 模擬器讓老師看到學生畫面</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"I.5\">I.5</button> 學生最有感的是「跟老師用一樣的工具」<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.13\">A.13</button> 跟不上老師頁數就不知道現在要幹嘛</td>\n</tr>\n</tbody></table>\n<p><strong>自主面：兩端的「監控」與「自由」都在回應同一個落差</strong></p>\n<ul>\n<li>老師端要鎖機／監控（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.4\">G.4</button> 希望具備監控／鎖機／控制學生螢幕的能力）的真正動因是 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.2\">J.2</button> 班級程度落差大，數位活動讓快的學生過早完成、慢的跟不上</li>\n<li>學生端要自學自由（<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"G.2\">G.2</button> 自學自由：希望能自己往下翻、不必等老師；<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.10\">F.10</button> 希望內容不要限定在課本範圍、想學的就能先學）的動因也是同一件事的反面——<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.13\">A.13</button> 跟不上老師頁數就完全失去方向</li>\n</ul>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：在設計上，「同步」和「自主」其實需要同時被滿足。</p>\n<ul>\n<li><strong>同步面</strong>：可以朝「雙向同步」的方向設計。讓老師能掌握學生的畫面，同時也讓學生清楚知道自己跟在老師的節奏上。如果只做老師專用的監控面板，就會忽略掉學生那種「能和老師平起平坐」的強烈心理需求（<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"I.5\">I.5</button>）。</li>\n<li><strong>自主面</strong>：可以提供「個別進度追蹤」的功能。這樣一來，學生能按照自己的步調學習，老師也能透過儀表板看顧到每個人的差異。這也呼應了老師端 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.6\">G.6</button> 提到的觀察（林文智老師對 LUMIO 的看法）：給予學生自由書寫與學習彈性的同時，自然也需要配套的防濫用機制，兩者一體兩面。</li>\n</ul></div>\n<hr>\n<h2 id=\"sec-2\">二、AI 對學生是「自學伴侶」，對老師是「教學副駕」</h2>\n<p>設計 AI 時必須區分對象。學生和老師對 AI 的期待截然不同：學生在意的是工具好不好用、給的答案可不可信；老師則在乎 AI 要怎麼融入教學，以及能不能減輕備課負擔。如果想用同一套 AI 設定打發兩邊，就會發生觀察員在現場看到的狀況：平台把小細胞設定為「自學工具」，結果學生只想要直接拿答案，完全不想主動探索。因此，針對不同使用者，AI 的角色和設計必須有所區隔。</p>\n<h3>給學生的 AI：自學伴侶</h3>\n<p><strong>關注的面向</strong></p>\n<table><thead><tr>\n<th>面向</th>\n<th>項目</th>\n</tr></thead><tbody>\n<tr>\n<td>體驗品質</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.1\">D.1</button> 卡頓<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.2\">D.2</button> 當掉<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.5\">D.5</button> 答非所問<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.6\">D.6</button> 認不得自己的名字<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.4\">E.4</button> 中文比英文容易錯<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.5\">E.5</button> 跳針<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.6\">E.6</button> 被質疑就換答案</td>\n</tr>\n<tr>\n<td>期待功能</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"D.10\">D.10</button> 一次給多個來源網站讓自己挑<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.7\">E.7</button> 一步步解＋指出修正<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.9\">E.9</button> 聲音問答<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.10\">E.10</button> 更有情感<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.12\">E.12</button> 筆記能保留複習</td>\n</tr>\n<tr>\n<td>使用態度</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.13\">E.13</button> 對 AI 答案傾向「直接相信、直接照抄」<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.17\">E.17</button> 用 AI 寫作業靠解析自我判斷<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.18\">E.18</button> 求助順序「同學→AI→老師」（老師排第三）<br><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.15\">E.15</button>／<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.16\">E.16</button> 想要「掃題給答案」</td>\n</tr>\n</tbody></table>\n<p><strong>這個 AI 應該長怎樣</strong></p>\n<ul>\n<li><strong>要直接、要可信</strong>：學生通常會全盤接收 AI 的答案，所以平台有必要主動標示資訊的可信度並附上來源。遇到無法處理的問題時，AI 也應該坦白說「我不會」，避免胡亂瞎掰。</li>\n<li><strong>要溫度、要有步驟</strong>：解題過程可以像家教一樣一步步講解，學生做錯時能指出具體的錯誤環節並提供類似題練習。此外，介面可以支援語音和畫圖輸入，回覆的語氣也可以更帶點人情味。</li>\n<li><strong>要保留學習痕跡</strong>：能把對話過程整理成筆記，方便學生日後複習，讓 AI 不單單只是一次性的問答機，還能累積實質的學習成果。</li>\n</ul>\n<p><strong>AI 的角色與定位：「同學的替代品」</strong></p>\n<p>現實情況中，學生的求助順序往往是「先問同學、再問 AI、最後才找老師」。AI 可以扮演日常自學伴侶，幫忙解答學生不敢問老師或同學也答不出來的疑難雜症。不過，AI 沒辦法取代老師的地位。就如盧佳怡老師指出的，AI 終究無法取代人際互動，學生也表達過「希望老師上課，不想只掃 QR Code 自己看」。在設計上，我們可以接受學生會用 AI 來寫作業或找答案的事實，同時透過介面上的防呆提示（例如標示可信度、來源或坦承不確定）來培養學生交叉驗證的習慣，這樣會比單方面期望學生主動配合「引導式思考」來得實際。</p>\n<h3>給老師的 AI：教學副駕</h3>\n<p><strong>關注的面向</strong></p>\n<table><thead><tr>\n<th>面向</th>\n<th>項目</th>\n</tr></thead><tbody>\n<tr>\n<td>AI 之於學生學習</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.1\">D.1</button>「給答案 vs 引導」設計取捨<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.2\">D.2</button> 知識型直接給／探究型才反問<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.3\">D.3</button> AI 反問讓學生覺得「沒完沒了」<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.4\">D.4</button> AI 家教需即時掌握能力節點<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.5\">D.5</button> AI 承接基礎讓老師專注差異化<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.6\">D.6</button> AI 評分擴展<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.7\">D.7</button> 分組討論完即時分析</td>\n</tr>\n<tr>\n<td>倫理紅線</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.9\">D.9</button> 學習外包與抄襲文化（AI 變成新一代抄襲管道）<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.11\">D.11</button> 學生課堂使用需重新規範<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.13\">D.13</button> AI 仍以真人為主</td>\n</tr>\n<tr>\n<td>AI 之於老師工作</td>\n<td><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.8\">D.8</button> AI 出題基本概念可能錯、把關線不明確<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.10\">D.10</button> AI 寫成績單／教學文件看久了沒誠意<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.4\">C.4</button> 後台看不到學生問了小細胞什麼<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button> 想保留學生對話匯出 Excel 做分析<br><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.6\">C.6</button> 平台需提供「小細胞怎麼引導學生」的教學範例</td>\n</tr>\n</tbody></table>\n<p><strong>這個 AI 應該長怎樣</strong></p>\n<ul>\n<li><strong>可調整的彈性</strong>：像 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.1\">D.1</button> 提到的「給答案或給引導」，系統可以提供分流開關，讓老師根據「探究型」或「知識型」的教學目標自由切換。另外，搭配 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.11\">D.11</button> 期望的「課堂模式」，幫助老師在上課時拿捏學生的使用界線。</li>\n<li><strong>可監看與規範</strong>：老師需要透過後台看到學生問了 AI 什麼問題（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.4\">C.4</button>），甚至能把對話匯出成資料進行分析（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button>），以此因應 <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.9\">D.9</button> 提到的抄襲疑慮。同時，AI 出題時也該附上信心度標示，方便老師評估與把關（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.8\">D.8</button>）。</li>\n<li><strong>分擔基礎工作</strong>：讓 AI 幫忙解答常見的重複性問題（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.5\">D.5</button>），老師就能把心力放在差異化教學上。當小組討論結束後，AI 也能即時分析並給予老師建議（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.7\">D.7</button>）。而在備課方面，平台可以提供引導範例（<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.6\">C.6</button>），帶領老師更快熟悉如何運用 AI。</li>\n</ul>\n<p><strong>AI 的角色與定位：「教學的副駕」</strong></p>\n<p>它沒辦法取代老師，卻能接手重複性的教學庶務、執行基礎的差異化學習，並產出學習狀況報告，幫助老師更精準地抓到介入時機。對老師來說，AI 就像個「一對一自主學習教練」，讓差異化教學變得更可行。要達成這個目標的前提是，AI 的權限必須透明且能被監管，平台應該讓老師根據當下的教學設計來切換不同模式，把主導權交還給老師。</p>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：學生期待一個「更好用的 AI」，而老師需要的是「更可控的 AI」。因此平台有必要針對這兩種角色，分別設計不同的 AI 介面與功能定位。</p>\n<ul>\n<li><strong>給學生</strong>：扮演「自學伴侶」的角色。能直接給出答案、清楚標示資訊的可信度，並且幫忙把學習的過程記錄下來。</li>\n<li><strong>給老師</strong>：扮演「教學副駕」的角色。提供可以調整引導或給答案模式的開關，具備能監看學生狀況的後台，以及讓 AI 幫忙處理基礎教學工作的設定選項。</li>\n</ul></div>\n<p>雖然背後可能使用同一個 AI 模型，但針對師生的介面和設定入口需要徹底分開。如果不這麼做，就會重演「老師想用 AI 來引導思考，學生卻只想直接要答案」這種設計用意和實際使用場景互相打架的狀況。</p>\n<hr>\n<h2 id=\"sec-3\">三、串起老師的教學閉環：教學→提問→回應→收斂→後續</h2>\n<p><strong>老師端</strong>散在多個類別的「閉環」需求，其實在勾勒一個完整的課堂流程——從教學開始、到課後分析學情結束。把它們依教學節奏串成五個階段，每一階段都對應特定的功能需求；前四個階段恰好有學生端的需求對得起來，可以作為設計共識的補充。</p>\n<p><strong>1. 教學（內容呈現）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"I.1\">I.1</button> 期待一條龍互動鏈：簡報 → 電子書 → 互動 → 測驗 → IRS → 學生回傳（整段流程的願景）</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.1\">F.1</button> 希望課本能補充課外影片、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.5\">F.5</button> 希望加入語音功能學英文、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.6\">F.6</button> 希望課本能呈現「實驗流程影片」</li>\n</ul>\n<p><strong>2. 提問（把題目拋給學生）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"B.6\">B.6</button> 互動題缺搶答與作答上傳機制——老師要能即時拋問題、收答案</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"B.5\">B.5</button> 星際巡航希望加入更多題型與遊戲玩法（學生對「被提問」買單，前提是夠有趣）</li>\n</ul>\n<p><strong>3. 回應（學生作答後的即時反饋）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"D.4\">D.4</button> AI 家教需更即時、能掌握學生落點脈絡並引導到對應能力節點</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"B.7\">B.7</button> 互動模組聲音回饋不夠明顯（學生要即時聽到對錯）、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.7\">E.7</button> 希望 AI 解題能一步一步走、做錯指出修正、提供類似題</li>\n</ul>\n<p><strong>4. 收斂（讓學習不散掉）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"B.2\">B.2</button> 互動結束缺乏「收斂」步驟——學生玩完不記得學到什麼</li>\n<li>學生共識補充：<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.3\">F.3</button> 希望讀完一頁就有題目加深印象、<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.12\">E.12</button> 希望 AI 能把產生的筆記抄下來方便複習</li>\n</ul>\n<p><strong>5. 後續（課後學情分析）</strong></p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.4\">C.4</button> 老師看不到學生問了小細胞什麼（教師後台缺口）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"C.5\">C.5</button> 希望保留學生對話紀錄並能匯出 Excel 做分析</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.3\">G.3</button> 希望學生畫完／寫完課本後能直接傳給老師檢視</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.5\">G.5</button> 期待老師端能「平台收集學生作答反應」</li>\n</ul>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：對老師來說，教學是一個連貫的流程。單一功能只解決一個階段的問題還不夠，重點在於能不能承接上一個動作的結果，並順利推進到下一步。以前這些環節之間的轉換，都得靠老師用口頭、板書或課堂規矩親自串連，作法比較受限。數位化帶來的好處，除了把這個過程搬到平台上自動化之外，更重要的是提供老師豐富的工具，讓每個轉換環節都能有更多變化。</p>\n<ul>\n<li><strong>多元性</strong>：光是「拋出問題」這個動作，就可以變化出搶答、小組討論、即時反饋（IRS）或個人作答等不同玩法。透過多樣的形式來吸引學生，老師就不用一直用同一套節奏帶領全班。</li>\n<li><strong>差異化</strong>：在「回饋與收斂」階段，系統可以根據學生的程度提供不同的引導路徑，或幫忙整理出專屬的筆記。這樣就能把過去極度仰賴老師臨場反應的差異化教學，變成系統流程中自然落實的一部分。</li>\n</ul></div>\n<p>要把這個教學迴圈設計得好，關鍵不只在於那五個階段，更在於階段和階段之間的「轉接點」能創造出多少彈性。這些轉接點本身，就是拿來激發學生動機和實現差異化教學的最佳設計發揮空間。</p>\n<hr>\n<h2 id=\"sec-4\">四、單側盲區：兩端各自看不見對方在意什麼</h2>\n<p>兩份清單對讀後，有些議題只在一端被密集提及、另一端完全空白。這不是優先級問題，是「若只聽一端會看不見」的風險。</p>\n<p><strong>只有學生端提（老師完全沒寫進清單）</strong>：</p>\n<ul>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.10\">A.10</button> 畫筆顏色太少</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"H.2\">H.2</button> 希望能拉出便利貼小框框打字／<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"H.3\">H.3</button> 沒有打字框只能手寫，寫出來自己也看不懂（學生對 LoiloNote 風格的便利貼打字框有明確心理模型）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.8\">A.8</button> 觸控筆會點不到目標位置／寫字時跳出其他頁面</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"F.7\">F.7</button> 希望內容能立體化／VR 化</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.4\">E.4</button> AI 中文回覆比英文回覆更容易出錯</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.5\">E.5</button> AI 會跳針、重複同一句話／<button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"E.6\">E.6</button> AI 被質疑後直接換成另一組答案</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"I.5\">I.5</button>「跟老師用一樣的工具」這個情感驅力</li>\n</ul>\n<p><strong>只有老師端提（學生不會講）</strong>：</p>\n<ul>\n<li>E、F 整組自編教材的 bug 與功能期待</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.5\">G.5</button> 學生作答資料回收／<button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"G.7\">G.7</button> 自編教科書互看是「教師成長數位化」最確定有效的應用</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.6\">J.6</button> 老師跨不過工具門檻，平台再好也進不了課堂</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.7\">J.7</button> <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.8\">J.8</button> <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.9\">J.9</button> <button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.10\">J.10</button> 家長端的整套策略（培訓家長、塑造合作而非對立、家庭支持崩壞）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.1\">J.1</button> 課內進度太緊（學生只感受到 <button type=\"button\" class=\"ref-tag ref-tag-student\" data-perspective=\"student\" data-code=\"A.13\">A.13</button> 跟不上，但講不出結構性原因）</li>\n<li><button type=\"button\" class=\"ref-tag ref-tag-teacher\" data-perspective=\"teacher\" data-code=\"J.11\">J.11</button> 期待數位教科書承載差異化教學的可能性</li>\n</ul>\n<div class=\"insight-callout\">\n<p><strong>啟示</strong>：師生兩端的盲點，剛好反映出他們各自真正在意的核心。</p>\n<ul>\n<li><strong>學生重視體驗與當下感受</strong>：學生一直提但老師沒注意到的，幾乎都圍繞在「用起來順不順」這件事上，例如畫筆好不好畫、有沒有輸入框、觸控準不準，以及 AI 講話自不自然。學生不懂什麼叫「教學設計」，他們只會很直接地抱怨「很卡」、「一直跳針」或「跟不上」。這些細節，其實就是決定他們願不願意繼續使用這套系統的隱形門檻。</li>\n<li><strong>老師重視教學流程與系統結構</strong>：老師關心但學生不會提的，大多屬於教學制度與運作流程的層面，包含自編教材的便利性、其他老師的上手難度、如何面對家長、趕進度的壓力，以及系統能不能支援差異化教學。簡單來說，學生在乎學習的體驗，而老師顧慮的是整套教學機制能不能順利運作下去。</li>\n</ul></div>\n<p>因此，我們在解讀這兩種使用回饋時需要區分清楚，把它們用在不同的決策上。學生的心聲可以幫產品「避免被使用者淘汰」，而老師的建議則能幫產品「真正順利走進教室」。</p>\n<hr>\n<h2 id=\"sec-5\">五、從「可用」到「驚艷」之間的落差：V1 站在哪裡</h2>\n<p>V1 試用版初期的目標很明確：要「能在課堂上用起來」。也就是老師能順利打開，學生能跟著操作，基本互動也跑得動。從訪談來看，這點確實達成了，沒人覺得它「完全用不下去」。</p>\n<p>但同時也很明顯，沒有人形容它「讓人驚艷」。V1 暫時還無法讓師生眼睛一亮，產生那種「非用不可」的依賴感。要理解這個落差，我們可以比較一下「師生真正記得的功能」和「我們實際投入的心力」，兩者其實不太對稱。</p>\n<p><strong>師生記得住的，是那些有特色的亮點功能</strong></p>\n<p>訪談中大家反覆提到、印象深刻的，都是那些定位清楚、很有辨識度的設計。它們雖然不一定最完整穩定，但都有明確的特色：</p>\n<ul>\n<li><strong>學生端</strong>：星際巡航的遊戲感、AI 對話的溫度與情感，以及互動模組裡的趣味環節。</li>\n<li><strong>老師端</strong>：自編教材帶來的掌控感、引導式 AI 的設計，還有教材跨班互看的共備潛力。</li>\n</ul>\n<p><strong>我們做了很多基礎建設，卻被視為「理所當然」</strong></p>\n<p>相對地，我們花了很多力氣做響應式設計、基礎工具列（畫筆、便利貼）、流暢的切頁和跨章節導覽。這些是平台可用的基礎，沒做一定會被罵，但做好了大家也覺得是應該的，很難因此產生主動推薦的動力。</p>\n<p>這就像大家覺得 Canva 或 LoiloNote 必不可少，關鍵在於它們獨特的工具組合讓人覺得「沒它不行」，往往無關乎響應式設計做得多完美。這種「不可取代」的感覺，其實建立在幾個強大的特色功能上，單靠完美的基礎建設是很難達到的。</p>\n<p><strong>V1 的現實與策略選擇</strong></p>\n<p>V1 受限於資源和時間，有一點 bug 和粗糙感在所難免，我們現階段也無法在每個細節都追平業界最頂尖的產品。但更重要的體會是：驚艷感無法單靠砸資源磨平基礎來換取，必定要靠少數特色功能來撐場。這不僅僅是資源夠不夠的問題，更是「你想讓使用者記住什麼」的策略選擇。</p>\n<p class=\"insight-callout\"><strong>啟示</strong>：可用性和驚艷感雖然是兩回事，但它們其實並不衝突。</p>\n<p>我們做數位教科書最核心的價值，其實是改變學習的「形式」。也就是把原本只能單向閱讀的紙本，轉變成可以互動、即時給回饋，還能配合不同學生節奏的載體。我們花很多心力做的響應式設計、基礎工具列和流暢的切換體驗，表面上看起來只是基礎工程，但這正是在落實「改變形式」這件事。只不過這些設計太基礎了，完全融入在操作過程裡，大家通常不會特別挑出來稱讚。這絕對不代表它不重要，因為它的價值早就體現在每一次順手的點擊之中。如果少了這層基礎，這套產品就只是把紙本貼到螢幕上，根本稱不上是真正的數位教科書。</p>\n<ul>\n<li><strong>基本盤撐起的是「形式上的改變」</strong>：像介面順暢度、跨裝置支援這些地基必須持續打穩，因為它們是讓「紙本變數位」真正成立的前提。如果這層沒做好，再多酷炫的功能都會被卡頓和當機給抵消掉。</li>\n<li><strong>亮點功能創造的是「主動推薦的記憶點」</strong>：師生會一直提起、甚至願意推薦給別人的，通常是那幾個定位很清楚、很有特色的設計（比如星際巡航或自編教材）。這層設計決定了產品到底值不值得被推薦。</li>\n</ul>\n<p>因此在下一階段，我們完全不需要在「打磨基本盤」和「開發亮點」之間做二選一，這兩件事必須同步推進。基本盤能讓產品真正在課堂上活下來，而亮點功能則能讓 V1 在大家口中留下具體的記憶點。在資源有限的情況下，我們該做的決策是把籌碼集中投資在哪一兩個特色功能上，同時繼續維護好系統基礎。前者讓 V1 站得住腳，後者讓 V1 被大家記住，兩者缺一不可。</p>",
   "personas": {
     "student": {
       "title": "使用者描述：學生",
